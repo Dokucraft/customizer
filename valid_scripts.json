@@ -1,3 +1,16 @@
 [
-  "end_sky/rift/enable"
+  "better_lava/enable",
+  "night_sky/procedural",
+  "night_sky/enable_auroras",
+  "night_sky/aurora_color",
+  "end_sky/vanilla",
+  "end_sky/rift/enable",
+  "end_sky/rift/rift_color",
+  "end_sky/rift/stars_outside_color",
+  "end_sky/rift/nebulae_outside_color",
+  "end_sky/rift/stars_inside_color",
+  "end_sky/rift/nebulae_inside_color",
+  "leaves_model/vanilla",
+  "waving_plants/disable",
+  "swaying_lanterns/disable"
 ]

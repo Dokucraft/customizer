@@ -1,0 +1,3 @@
+enable assets/minecraft/shaders/config.txt ENABLE_BETTER_LAVA
+add better_lava/lava_still.png assets/minecraft/textures/block/lava_still.png
+delete assets/minecraft/textures/block/lava_still.png.mcmeta

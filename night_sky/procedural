@@ -1,0 +1,1 @@
+enable assets/minecraft/shaders/program/skybox.fsh ENABLE_EXPERIMENTAL_PROCEDURAL_NIGHT_SKY
