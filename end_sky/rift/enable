@@ -1,0 +1,2 @@
+delete assets/minecraft/optifine/sky/world1
+enable assets/minecraft/shaders/config.txt ENABLE_CUSTOM_END_SKY
