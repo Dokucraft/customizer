@@ -48,8 +48,8 @@
               "name": "Skybox",
               "desc": "Uses post shaders to draw a custom static skybox.",
               "preview": "night_sky/skybox",
-              "default": true
-              "arg": false,
+              "default": true,
+              "arg": false
             },
             {
               "name": "Procedural Starfield",
@@ -61,14 +61,14 @@
           ]
         },
         {
-          "type": "select"
+          "type": "select",
           "desc": "Auroras are beautiful lights that can be seen in the sky near the poles of the planet during solar storms. This effect can be enabled through post shaders in Dokucraft, but it can significantly lower the performance unless you have a powerful GPU. This effect requires the Fabulous graphics setting, and if you are using Optifine, Custom Sky must be disabled in the in-game options.",
           "key": "auroras",
           "options": [
             {
               "name": "Disabled",
-              "default": true
-              "arg": false,
+              "default": true,
+              "arg": false
             },
             {
               "name": "Enabled",
