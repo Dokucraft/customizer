@@ -1,0 +1,93 @@
+{
+  "performance": {
+    "0": "No change",
+    "1": "Very small increase",
+    "2": "Small increase",
+    "3": "Medium increase",
+    "4": "Major increase",
+    "-4": "Major decrease",
+    "-3": "Medium decrease",
+    "-2": "Small decrease",
+    "-1": "Very small decrease"
+  },
+  "options": {
+    "better_lava": {
+      "name": "Better Lava Shader",
+      "command": "better_lava/config",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Core shaders can be used to add variation to lava, massively improving the look of large lava lakes.\n\nThis is INCOMPATIBLE with mods that override the solid shader. Do NOT use this option together with mods like Sodium, or with shaderpacks.",
+          "options": [
+            {
+              "name": "Disabled",
+              "desc": "Vanilla-style lava with a custom texture.",
+              "preview": "lava/vanilla_lava",
+              "default": true
+            },
+            {
+              "name": "Enabled",
+              "desc": "Uses core shaders to randomize the texture and animation of lava.",
+              "preview": "lava/better_lava",
+              "perf": -2
+            }
+          ]
+        }
+      ]
+    },
+    "night_sky": {
+      "name": "Vanilla Night Sky",
+      "command": "night_sky/config",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Dokucraft uses post shaders to draw anything the pack needs in the sky without requiring any mods like Optifine. Here you can select what to draw in the sky at night. These effects require the Fabulous graphics setting. If you are using Optifine, disable Custom Sky in the in-game options to see the shader sky.",
+          "key": "sky",
+          "options": [
+            {
+              "name": "Skybox",
+              "desc": "Uses post shaders to draw a custom static skybox.",
+              "preview": "night_sky/skybox",
+              "default": true
+              "arg": false,
+            },
+            {
+              "name": "Procedural Starfield",
+              "desc": "Uses post shaders to generate stars and nebulae without using any textures.",
+              "preview": "night_sky/procedural",
+              "arg": true,
+              "perf": -3
+            }
+          ]
+        },
+        {
+          "type": "select"
+          "desc": "Auroras are beautiful lights that can be seen in the sky near the poles of the planet during solar storms. This effect can be enabled through post shaders in Dokucraft, but it can significantly lower the performance unless you have a powerful GPU. This effect requires the Fabulous graphics setting, and if you are using Optifine, Custom Sky must be disabled in the in-game options.",
+          "key": "auroras",
+          "options": [
+            {
+              "name": "Disabled",
+              "default": true
+              "arg": false,
+            },
+            {
+              "name": "Enabled",
+              "preview": "auroras",
+              "arg": true,
+              "perf": -4
+            }
+          ]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the auroras.",
+          "key": "aurora_color",
+          "requires": {
+            "night_sky/1": 1
+          },
+          "default": [0.465, 2, 0.833]
+        }
+      ]
+    }
+  }
+}

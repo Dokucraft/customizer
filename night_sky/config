@@ -1,0 +1,9 @@
+if procedural
+  enable assets/minecraft/shaders/program/skybox.fsh ENABLE_EXPERIMENTAL_PROCEDURAL_NIGHT_SKY
+end
+if auroras
+  enable assets/minecraft/shaders/program/skybox.fsh ENABLE_AURORAS
+  if typeof aurora_color === 'string'
+    vec3 assets/minecraft/shaders/program/skybox.fsh AURORA_COLOR $aurora_color
+  end
+end
