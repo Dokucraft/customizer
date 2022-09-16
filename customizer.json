@@ -1,4 +1,10 @@
 {
+  "customizers": {
+    "1.19": [
+      "better_lava",
+      "night_sky"
+    ]
+  },
   "performance": {
     "0": "No change",
     "1": "Very small increase",
