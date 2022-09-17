@@ -24,7 +24,7 @@
         {
           "type": "select",
           "desc": "Core shaders can be used to add variation to lava, massively improving the look of large lava lakes.\n\nThis is INCOMPATIBLE with mods that override the solid shader. Do NOT use this option together with mods like Sodium, or with shaderpacks.",
-          "key": "enabled"
+          "key": "enabled",
           "options": [
             {
               "name": "Disabled",
