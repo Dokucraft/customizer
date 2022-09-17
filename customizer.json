@@ -24,18 +24,21 @@
         {
           "type": "select",
           "desc": "Core shaders can be used to add variation to lava, massively improving the look of large lava lakes.\n\nThis is INCOMPATIBLE with mods that override the solid shader. Do NOT use this option together with mods like Sodium, or with shaderpacks.",
+          "key": "enabled"
           "options": [
             {
               "name": "Disabled",
               "desc": "Vanilla-style lava with a custom texture.",
               "preview": "lava/vanilla_lava",
-              "default": true
+              "default": true,
+              "arg": false
             },
             {
               "name": "Enabled",
               "desc": "Uses core shaders to randomize the texture and animation of lava.",
               "preview": "lava/better_lava",
-              "perf": -2
+              "perf": -2,
+              "arg": true
             }
           ]
         }
@@ -61,8 +64,8 @@
               "name": "Procedural Starfield",
               "desc": "Uses post shaders to generate stars and nebulae without using any textures.",
               "preview": "night_sky/procedural",
-              "arg": true,
-              "perf": -3
+              "perf": -3,
+              "arg": true
             }
           ]
         },
