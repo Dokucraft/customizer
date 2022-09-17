@@ -1,8 +1,6 @@
 [
-  "better_lava/enable",
-  "night_sky/procedural",
-  "night_sky/enable_auroras",
-  "night_sky/aurora_color",
+  "better_lava/configure",
+  "night_sky/configure",
   "end_sky/vanilla",
   "end_sky/rift/enable",
   "end_sky/rift/rift_color",

@@ -19,7 +19,7 @@
   "options": {
     "better_lava": {
       "name": "Better Lava Shader",
-      "command": "better_lava/config",
+      "command": "better_lava/configure",
       "settings": [
         {
           "type": "select",
@@ -43,7 +43,7 @@
     },
     "night_sky": {
       "name": "Vanilla Night Sky",
-      "command": "night_sky/config",
+      "command": "night_sky/configure",
       "settings": [
         {
           "type": "select",
@@ -68,16 +68,16 @@
         },
         {
           "type": "select",
-          "desc": "Auroras are beautiful lights that can be seen in the sky near the poles of the planet during solar storms. This effect can be enabled through post shaders in Dokucraft, but it can significantly lower the performance unless you have a powerful GPU. This effect requires the Fabulous graphics setting, and if you are using Optifine, Custom Sky must be disabled in the in-game options.",
+          "desc": "Auroras are beautiful lights that can be seen in the sky near the poles of the planet during solar storms. This effect can be enabled in Dokucraft, but it can significantly lower the performance unless you have a powerful GPU.",
           "key": "auroras",
           "options": [
             {
-              "name": "Disabled",
+              "name": "No auroras",
               "default": true,
               "arg": false
             },
             {
-              "name": "Enabled",
+              "name": "Auroras",
               "preview": "auroras",
               "arg": true,
               "perf": -4
