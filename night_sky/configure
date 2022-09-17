@@ -1,4 +1,4 @@
-if procedural
+if sky === 'procedural'
   enable assets/minecraft/shaders/program/skybox.fsh ENABLE_EXPERIMENTAL_PROCEDURAL_NIGHT_SKY
 end
 if auroras

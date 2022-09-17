@@ -58,14 +58,14 @@
               "desc": "Uses post shaders to draw a custom static skybox.",
               "preview": "night_sky/skybox",
               "default": true,
-              "arg": false
+              "arg": "skybox"
             },
             {
               "name": "Procedural Starfield",
               "desc": "Uses post shaders to generate stars and nebulae without using any textures.",
               "preview": "night_sky/procedural",
               "perf": -3,
-              "arg": true
+              "arg": "procedural"
             }
           ]
         },
