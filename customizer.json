@@ -216,7 +216,7 @@
           "key": "model",
           "options": [
             {
-              "name": "Varied Height",
+              "name": "Varied height",
               "desc": "Leaves have random height differences.",
               "default": true,
               "arg": "varied_height"
@@ -228,8 +228,8 @@
               "arg": "vanilla"
             },
             {
-              "name": "Bushy Leaves",
-              "desc": "Use a cross block model.",
+              "name": "Bushy leaves",
+              "desc": "Leaves blocks have some leaves that stick out to give them a bushy look.",
               "perf": 0,
               "arg": "bushy"
             }
