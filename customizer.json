@@ -212,7 +212,7 @@
       "settings": [
         {
           "type": "select",
-          "desc": "Dokucraft can use core shaders to make things like vegitation less static. This option makes plants wave slightly, as if the wind was pushing them around.",
+          "desc": "Choose a model for the leaves blocks.",
           "key": "model",
           "options": [
             {
