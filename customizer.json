@@ -2,7 +2,8 @@
   "customizers": {
     "1.19": [
       "better_lava",
-      "night_sky"
+      "night_sky",
+      "end_sky"
     ]
   },
   "performance": {
