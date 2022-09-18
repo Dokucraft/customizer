@@ -1,3 +1,5 @@
 if model === 'vanilla'
   add leaves_model/vanilla_blockstates assets/minecraft/blockstates
+elseif model === 'bushy'
+  add leaves_model/bushy_leaves assets/minecraft
 end

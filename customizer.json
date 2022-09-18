@@ -226,6 +226,12 @@
               "desc": "Use the standard simple block model.",
               "perf": 0,
               "arg": "vanilla"
+            },
+            {
+              "name": "Bushy Leaves",
+              "desc": "Use a cross block model.",
+              "perf": 0,
+              "arg": "bushy"
             }
           ]
         }
