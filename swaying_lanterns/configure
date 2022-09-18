@@ -1,0 +1,3 @@
+if !enabled
+  disable assets/minecraft/shaders/config.txt ENABLE_LANTERN_SWAY
+end

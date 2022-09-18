@@ -3,7 +3,10 @@
     "1.19": [
       "better_lava",
       "night_sky",
-      "end_sky"
+      "end_sky",
+      "leaves_model",
+      "waving_plants",
+      "swaying_lanterns"
     ]
   },
   "performance": {
@@ -200,6 +203,81 @@
             "high": [0.5, 0.35, 0.9],
             "dwarven": [0.9, 0.2, 0.05]
           }
+        }
+      ]
+    },
+    "leaves_model": {
+      "name": "Leaves Model",
+      "command": "leaves_model/configure",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Dokucraft can use core shaders to make things like vegitation less static. This option makes plants wave slightly, as if the wind was pushing them around.",
+          "key": "model",
+          "options": [
+            {
+              "name": "Varied Height",
+              "desc": "Leaves have random height differences.",
+              "default": true,
+              "arg": "varied_height"
+            },
+            {
+              "name": "Vanilla",
+              "desc": "Use the standard simple block model.",
+              "perf": 0,
+              "arg": "vanilla"
+            }
+          ]
+        }
+      ]
+    },
+    "waving_plants": {
+      "name": "Waving Plants",
+      "command": "waving_plants/configure",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Dokucraft can use core shaders to make things like vegitation less static. This option makes plants wave slightly, as if the wind was pushing them around.",
+          "key": "enabled",
+          "options": [
+            {
+              "name": "Disabled",
+              "command": "disable",
+              "perf": 1,
+              "arg": false
+            },
+            {
+              "name": "Enabled",
+              "default": true,
+              "preview": "waving_plant",
+              "arg": true
+            }
+          ]
+        }
+      ]
+    },
+    "swaying_lanterns": {
+      "name": "Swaying Lanterns",
+      "command": "swaying_lanterns/configure",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Core shaders can be used to make hanging lanterns sway back and forth, as if they were lightly pushed by the wind.",
+          "key": "enabled",
+          "options": [
+            {
+              "name": "Disabled",
+              "command": "disable",
+              "perf": 1,
+              "arg": false
+            },
+            {
+              "name": "Enabled",
+              "default": true,
+              "preview": "swaying_lantern",
+              "arg": true
+            }
+          ]
         }
       ]
     }

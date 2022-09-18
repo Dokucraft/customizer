@@ -1,0 +1,3 @@
+if model === 'vanilla'
+  add leaves_model/vanilla_blockstates assets/minecraft/blockstates
+end
