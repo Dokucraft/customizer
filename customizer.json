@@ -82,8 +82,8 @@
             {
               "name": "Auroras",
               "preview": "auroras",
-              "arg": true,
-              "perf": -4
+              "perf": -4,
+              "arg": true
             }
           ]
         },
@@ -95,6 +95,110 @@
             "night_sky/1": 1
           },
           "default": [0.465, 2, 0.833]
+        }
+      ]
+    },
+    "end_sky": {
+      "name": "End Sky",
+      "command": "end_sky/configure",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Minecraft's End skybox repeats a texture 16x16 for each side of the box. Dokucraft can use Optifine or core shaders to override this behavior and create something spectacular in the End sky.",
+          "key": "sky",
+          "options": [
+            {
+              "name": "Optifine Skybox",
+              "desc": "Uses Optifine's Custom Sky features to apply a custom static skybox.",
+              "preview": "end_sky/optifine",
+              "default": true,
+              "arg": "optifine"
+            },
+            {
+              "name": "Vanilla",
+              "desc": "Uses the vanilla End skybox with a custom texture.",
+              "preview": "end_sky/vanilla",
+              "perf": 0,
+              "arg": "vanilla"
+            },
+            {
+              "name": "Otherworldly Rift",
+              "desc": "Uses core shaders to create an animated sky. Also opens up extra customization options.",
+              "preview": "end_sky/rift",
+              "perf": -3,
+              "arg": "rift"
+            }
+          ]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the glow from the Otherworldly Rift.",
+          "key": "rift_color",
+          "requires": {
+            "end_sky/0": 2
+          },
+          "default": {
+            "light": [1.0, 0.1, 0.3],
+            "dark": [0.7, 0.3, 0.15],
+            "high": [0.1, 0.45, 0.9],
+            "dwarven": [0.5, 0.2, 1.0]
+          }
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the stars outside the Otherworldly Rift.",
+          "key": "os_color",
+          "requires": {
+            "end_sky/0": 2
+          },
+          "default": {
+            "light": [0.9, 0.6, 0.9],
+            "dark": [0.9, 0.8, 0.6],
+            "high": [0.4, 0.7, 0.9],
+            "dwarven": [0.8, 0.6, 1.1]
+          }
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the nebulae outside the Otherworldly Rift.",
+          "key": "on_color",
+          "requires": {
+            "end_sky/0": 2
+          },
+          "default": {
+            "light": [0.8, 0.1, 0.9],
+            "dark": [0.8, 0.3, 0.8],
+            "high": [0.2, 0.6, 0.8],
+            "dwarven": [0.6, 0.1, 0.9]
+          }
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the stars inside the Otherworldly Rift.",
+          "key": "is_color",
+          "requires": {
+            "end_sky/0": 2
+          },
+          "default": {
+            "light": [0.6, 1.2, 2.8],
+            "dark": [1.0, 1.2, 2.0],
+            "high": [1.2, 1.0, 2.4],
+            "dwarven": [2.3, 1.4, 0.3]
+          }
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the nebulae inside the Otherworldly Rift.",
+          "key": "in_color",
+          "requires": {
+            "end_sky/0": 2
+          },
+          "default": {
+            "light": [0.2, 0.5, 0.9],
+            "dark": [0.4, 0.5, 0.8],
+            "high": [0.5, 0.35, 0.9],
+            "dwarven": [0.9, 0.2, 0.05]
+          }
         }
       ]
     }

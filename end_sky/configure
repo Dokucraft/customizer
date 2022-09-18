@@ -1,0 +1,21 @@
+if sky === 'vanilla' || sky === 'rift'
+  delete assets/minecraft/optifine/sky/world1
+end
+if sky === 'rift'
+  enable assets/minecraft/shaders/config.txt ENABLE_CUSTOM_END_SKY
+  if typeof rift_color === 'string'
+    vec3 assets/minecraft/shaders/flavor.glsl END_SKY_RIFT_COLOR $rift_color
+  end
+  if typeof in_color === 'string'
+    vec3 assets/minecraft/shaders/flavor.glsl END_SKY_NEBULAE_INSIDE_COLOR $in_color
+  end
+  if typeof on_color === 'string'
+    vec3 assets/minecraft/shaders/flavor.glsl END_SKY_NEBULAE_OUTSIDE_COLOR $on_color
+  end
+  if typeof is_color === 'string'
+    vec3 assets/minecraft/shaders/flavor.glsl END_SKY_STARS_INSIDE_BASE_COLOR $is_color
+  end
+  if typeof os_color === 'string'
+    vec3 assets/minecraft/shaders/flavor.glsl END_SKY_STARS_OUTSIDE_BASE_COLOR $os_color
+  end
+end
