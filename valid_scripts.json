@@ -1,5 +1,8 @@
 [
   "better_lava/configure",
   "night_sky/configure",
-  "end_sky/configure"
+  "end_sky/configure",
+  "leaves_model/configure",
+  "waving_plants/configure",
+  "swaying_lanterns/configure"
 ]
