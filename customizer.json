@@ -131,6 +131,13 @@
               "preview": "end_sky/rift",
               "perf": -3,
               "arg": "rift"
+            },
+            {
+              "name": "Cloudy",
+              "desc": "Uses core shaders to create an animated sky. Also opens up extra customization options.",
+              "preview": "end_sky/cloudy",
+              "perf": -3,
+              "arg": "cloudy"
             }
           ]
         },
@@ -203,6 +210,60 @@
             "high": [0.5, 0.35, 0.9],
             "dwarven": [0.9, 0.2, 0.05]
           }
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a base color for the Cloudy sky.",
+          "key": "c_base_color",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.05, 0.067, 0.133]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the primary clouds in the Cloudy sky.",
+          "key": "c_strong_color",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.819, 0.839, 0.925]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the primary clouds where they fade out in the Cloudy sky.",
+          "key": "c_strong_color_1",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.6, 0.4, 1.2]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a secondary color for the primary clouds where they fade out in the Cloudy sky.",
+          "key": "c_strong_color_2",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.7, 0.8, 1.6]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the secondary clouds in the Cloudy sky.",
+          "key": "c_weak_color",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.501, 0.549, 0.741]
+        },
+        {
+          "type": "vec3_color",
+          "desc": "Choose a color for the stars in the Cloudy sky.",
+          "key": "c_stars_color",
+          "requires": {
+            "end_sky/0": 3
+          },
+          "default": [0.8, 0.8, 0.9]
         }
       ]
     },

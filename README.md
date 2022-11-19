@@ -71,6 +71,11 @@ if example === '1'
 end
 ```
 
+### `scalar {path} {name} {value}`
+Changes the value of a float or integer with the given name in the file at the given path. Specifically, it replaces the number in something like `#define {name} 1` with the given value, such that it becomes `#define {name} {value}`
+
+The value can be taken from the script's context by putting a $ in front of the name. For example `$speed` would be the "speed" argument given to the script.
+
 ### `vec2 {path} {name} {value}`
 Changes the value of a vec2 with the given name in the file at the given path. Specifically, it replaces the 2 numbers in something like `#define {name} vec2(1, 0)` with the given value, such that it becomes `#define {name} vec2({value})`
 
