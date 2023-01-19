@@ -6,7 +6,8 @@
       "end_sky",
       "leaves_model",
       "waving_plants",
-      "swaying_lanterns"
+      "swaying_lanterns",
+      "campfire"
     ]
   },
   "performance": {
@@ -343,6 +344,198 @@
               "default": true,
               "preview": "swaying_lantern",
               "arg": true
+            }
+          ]
+        }
+      ]
+    },
+    "campfire": {
+      "name": "Campfire Color",
+      "command": "campfire/configure",
+      "settings": [
+        {
+          "type": "select",
+          "desc": "Choose a color for the campfires.",
+          "key": "color",
+          "options": [
+            {
+              "name": "Default",
+              "desc": "Regular fire color.",
+              "default": true,
+              "arg": "default"
+            },
+            {
+              "name": "White",
+              "perf": 0,
+              "arg": "white"
+            },
+            {
+              "name": "Orange",
+              "perf": 0,
+              "arg": "orange"
+            },
+            {
+              "name": "Magenta",
+              "perf": 0,
+              "arg": "magenta"
+            },
+            {
+              "name": "Light Blue",
+              "perf": 0,
+              "arg": "light_blue"
+            },
+            {
+              "name": "Yellow",
+              "perf": 0,
+              "arg": "yellow"
+            },
+            {
+              "name": "Lime",
+              "perf": 0,
+              "arg": "lime"
+            },
+            {
+              "name": "Pink",
+              "perf": 0,
+              "arg": "pink"
+            },
+            {
+              "name": "Gray",
+              "perf": 0,
+              "arg": "gray"
+            },
+            {
+              "name": "Light Gray",
+              "perf": 0,
+              "arg": "light_gray"
+            },
+            {
+              "name": "Cyan",
+              "perf": 0,
+              "arg": "cyan"
+            },
+            {
+              "name": "Purple",
+              "perf": 0,
+              "arg": "purple"
+            },
+            {
+              "name": "Blue",
+              "perf": 0,
+              "arg": "blue"
+            },
+            {
+              "name": "Brown",
+              "perf": 0,
+              "arg": "brown"
+            },
+            {
+              "name": "Green",
+              "perf": 0,
+              "arg": "green"
+            },
+            {
+              "name": "Red",
+              "perf": 0,
+              "arg": "red"
+            },
+            {
+              "name": "Black",
+              "perf": 0,
+              "arg": "black"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "desc": "Choose a color for the soul campfires.",
+          "key": "soul_color",
+          "options": [
+            {
+              "name": "Default",
+              "desc": "Regular fire color.",
+              "default": true,
+              "arg": "default"
+            },
+            {
+              "name": "White",
+              "perf": 0,
+              "arg": "white"
+            },
+            {
+              "name": "Orange",
+              "perf": 0,
+              "arg": "orange"
+            },
+            {
+              "name": "Magenta",
+              "perf": 0,
+              "arg": "magenta"
+            },
+            {
+              "name": "Light Blue",
+              "perf": 0,
+              "arg": "light_blue"
+            },
+            {
+              "name": "Yellow",
+              "perf": 0,
+              "arg": "yellow"
+            },
+            {
+              "name": "Lime",
+              "perf": 0,
+              "arg": "lime"
+            },
+            {
+              "name": "Pink",
+              "perf": 0,
+              "arg": "pink"
+            },
+            {
+              "name": "Gray",
+              "perf": 0,
+              "arg": "gray"
+            },
+            {
+              "name": "Light Gray",
+              "perf": 0,
+              "arg": "light_gray"
+            },
+            {
+              "name": "Cyan",
+              "perf": 0,
+              "arg": "cyan"
+            },
+            {
+              "name": "Purple",
+              "perf": 0,
+              "arg": "purple"
+            },
+            {
+              "name": "Blue",
+              "perf": 0,
+              "arg": "blue"
+            },
+            {
+              "name": "Brown",
+              "perf": 0,
+              "arg": "brown"
+            },
+            {
+              "name": "Green",
+              "perf": 0,
+              "arg": "green"
+            },
+            {
+              "name": "Red",
+              "perf": 0,
+              "arg": "red"
+            },
+            {
+              "name": "Black",
+              "perf": 0,
+              "arg": "black"
             }
           ]
         }
