@@ -1,5 +1,9 @@
 if sky === 'procedural'
-  enable assets/minecraft/shaders/program/skybox.fsh ENABLE_EXPERIMENTAL_PROCEDURAL_NIGHT_SKY
+  if /1\.19\.2-Dokucraft-(Light|High|Dark|Dwarven)\.zip/.test(pack)
+    enable assets/minecraft/shaders/program/skybox.fsh ENABLE_EXPERIMENTAL_PROCEDURAL_NIGHT_SKY
+  else
+    scalar assets/minecraft/shaders/program/skybox.fsh NIGHT_SKY 1
+  end
 end
 if auroras
   enable assets/minecraft/shaders/program/skybox.fsh ENABLE_AURORAS
