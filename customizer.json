@@ -1,542 +1,692 @@
 {
   "customizers": {
     "1.19": [
-      "better_lava",
-      "night_sky",
+      "post",
+      "optifine",
+      "shaderpack",
+      "sodium",
+      "of_custom_sky_overworld",
+      "aurora_color",
+      { "option": "night_sky", "maxVersion": 1 },
+      { "option": "night_sky_v2", "minVersion": 2 },
+      "auroras",
       "end_sky",
+      "end_sky_rift_color",
+      "end_sky_rift_os_color",
+      "end_sky_rift_on_color",
+      "end_sky_rift_is_color",
+      "end_sky_rift_in_color",
+      "end_sky_cloudy_base_color",
+      "end_sky_cloudy_primary_color",
+      "end_sky_cloudy_primary_fade_color_1",
+      "end_sky_cloudy_primary_fade_color_2",
+      "end_sky_cloudy_secondary_color",
+      "end_sky_cloudy_star_color",
+      "fresnel",
+      "better_lava",
+      { "option": "glass_panes",
+        "packs": [ "light", "dark", "high" ]
+      },
+      "flip_shovels",
       "leaves_model",
       "waving_plants",
-      "swaying_lanterns"
+      "swinging_lanterns",
+      "campfire_color",
+      "soul_campfire_color"
     ]
   },
-  "performance": {
-    "0": "No change",
-    "1": "Very small increase",
-    "2": "Small increase",
-    "3": "Medium increase",
-    "4": "Major increase",
-    "-4": "Major decrease",
-    "-3": "Medium decrease",
-    "-2": "Small decrease",
-    "-1": "Very small decrease"
+  "categories": {
+    "default": {"name": "Miscellaneous"},
+    "game_config": {
+      "name": "Game Configuration",
+      "desc": "Choose the options below that apply to you. This allows the customizer to make sure the pack works properly with your game."
+    },
+    "overworld_sky": {
+      "name": "Overworld Sky",
+      "desc": "Some mods, like Optifine, let resource packs customize how the sky is drawn. Post-processing shaders allow Dokucraft to draw a custom sky without requiring any mods."
+    },
+    "end_sky": {"name": "End Sky"}
+  },
+  "stats": {
+    "options": {
+      "post": false,
+      "optifine": false,
+      "shaderpack": false,
+      "sodium": false
+    },
+    "displays": [
+      {
+        "name": "Optifine or Sodium",
+        "type": "bool_pie",
+        "a": {
+          "name": "Optifine",
+          "option": "optifine",
+          "color": "#8c2c2d"
+        },
+        "b": {
+          "name": "Sodium",
+          "option": "sodium",
+          "color": "#75be61"
+        },
+        "neither": {
+          "name": "Neither",
+          "color": "gray"
+        }
+      },
+      {
+        "name": "Fabulous or shaderpacks",
+        "type": "bool_pie",
+        "a": {
+          "name": "Fabulous",
+          "option": "post",
+          "color": "#259cee"
+        },
+        "b": {
+          "name": "Shaderpacks",
+          "option": "shaderpack",
+          "color": "#e8c07e"
+        },
+        "neither": {
+          "name": "Neither",
+          "color": "gray"
+        }
+      }
+    ]
   },
   "options": {
+    "post": {
+      "name": "I use the Fabulous graphics setting",
+      "sidebar": "Fabulous",
+      "desc": "Fabulous enables post-processing shaders, which can be used by resource packs to do some things that can't be done with Fast or Fancy.",
+      "category": "game_config",
+      "type": "bool",
+      "condition": "!shaderpack",
+      "incompatText": "Incompatible with shaderpacks"
+    },
+    "optifine": {
+      "name": "I use Optifine",
+      "sidebar": "Optifine",
+      "desc": "Optifine allows resource packs to do a lot of things that are not possible in the vanilla game.",
+      "category": "game_config",
+      "type": "bool",
+      "condition": "!sodium",
+      "incompatText": "Incompatible with Sodium"
+    },
+    "shaderpack": {
+      "name": "I use a shaderpack with Optifine or Iris",
+      "sidebar": "Shaderpack",
+      "desc": "Shaderpacks can change a lot about how the game is rendered which can cause problems with some assets or effects.",
+      "category": "game_config",
+      "type": "bool",
+      "condition": "!post",
+      "incompatText": "Incompatible with Fabulous graphics"
+    },
+    "sodium": {
+      "name": "I use Sodium",
+      "sidebar": "Sodium",
+      "desc": "Sodium disables some of the shaders in resource packs that allow the pack to create certain effects.",
+      "category": "game_config",
+      "type": "bool",
+      "condition": "!optifine",
+      "incompatText": "Incompatible with Optifine"
+    },
     "better_lava": {
-      "name": "Better Lava Shader",
-      "command": "better_lava/configure",
-      "settings": [
+      "name": "Better Lava",
+      "desc": "Improve the look of lava by adding random texture variants with procedurally generated animations.",
+      "type": "bool",
+      "preview": "better_lava.webm",
+      "condition": "!sodium & !shaderpack",
+      "incompatText": "Incompatible with Sodium and shaderpacks"
+    },
+    "of_custom_sky_overworld": {
+      "name": "Optifine Custom Sky",
+      "desc": "Use Optifine's Custom Sky feature to draw a mostly static skybox in the overworld instead of requiring post-processing shaders.",
+      "category": "overworld_sky",
+      "type": "bool",
+      "condition": "optifine",
+      "incompatText": "Requires Optifine"
+    },
+    "night_sky": {
+      "name": "Night Sky",
+      "desc": "Use post-processing shaders to customize the night sky in vanilla Minecraft.",
+      "category": "overworld_sky",
+      "type": "select",
+      "condition": "post&!sodium&!of_custom_sky_overworld",
+      "incompatText": "Requires Fabulous graphics and is incompatible with Sodium and OF Custom Sky",
+      "options": [
         {
-          "type": "select",
-          "desc": "Core shaders can be used to add variation to lava, massively improving the look of large lava lakes.\n\nThis is INCOMPATIBLE with mods that override the solid shader. Do NOT use this option together with mods like Sodium, or with shaderpacks.",
-          "key": "enabled",
-          "options": [
-            {
-              "name": "Disabled",
-              "desc": "Vanilla-style lava with a custom texture.",
-              "preview": "lava/vanilla_lava",
-              "default": true,
-              "arg": false
-            },
-            {
-              "name": "Enabled",
-              "desc": "Uses core shaders to randomize the texture and animation of lava.",
-              "preview": "lava/better_lava",
-              "perf": -2,
-              "arg": true
-            }
-          ]
+          "name": "Skybox",
+          "desc": "The classic Dokucraft night skybox.",
+          "value": "skybox",
+          "thumbnail": "night_sky/skybox",
+          "preview": "night_sky/skybox_big"
+        },
+        {
+          "name": "Procedural Night Sky",
+          "desc": "Generate a night sky without using any textures.",
+          "warn": 1,
+          "value": "procedural",
+          "thumbnail": "night_sky/procedural",
+          "preview": "night_sky/procedural_big"
         }
       ]
     },
-    "night_sky": {
-      "name": "Vanilla Night Sky",
-      "command": "night_sky/configure",
-      "settings": [
+    "night_sky_v2": {
+      "name": "Night Sky",
+      "desc": "Use post-processing shaders to customize the night sky in vanilla Minecraft.",
+      "category": "overworld_sky",
+      "key": "night_sky",
+      "type": "select",
+      "condition": "post&!sodium&!of_custom_sky_overworld",
+      "incompatText": "Requires Fabulous graphics and is incompatible with Sodium and OF Custom Sky",
+      "options": [
         {
-          "type": "select",
-          "desc": "Dokucraft uses post shaders to draw anything the pack needs in the sky without requiring any mods like Optifine. Here you can select what to draw in the sky at night. These effects require the Fabulous graphics setting. If you are using Optifine, disable Custom Sky in the in-game options to see the shader sky.",
-          "key": "sky",
-          "options": [
-            {
-              "name": "Skybox",
-              "desc": "Uses post shaders to draw a custom static skybox.",
-              "preview": "night_sky/skybox",
-              "default": true,
-              "arg": "skybox"
-            },
-            {
-              "name": "Procedural Starfield",
-              "desc": "Uses post shaders to generate stars and nebulae without using any textures.",
-              "preview": "night_sky/procedural",
-              "perf": -3,
-              "arg": "procedural"
-            }
-          ]
+          "name": "Skybox",
+          "desc": "The classic Dokucraft night skybox.",
+          "value": "skybox",
+          "thumbnail": "night_sky/skybox",
+          "preview": "night_sky/skybox_big"
         },
         {
-          "type": "select",
-          "desc": "Auroras are beautiful lights that can be seen in the sky near the poles of the planet during solar storms. This effect can be enabled in Dokucraft, but it can significantly lower the performance unless you have a powerful GPU.",
-          "key": "auroras",
-          "options": [
-            {
-              "name": "No auroras",
-              "default": true,
-              "arg": false
-            },
-            {
-              "name": "Auroras",
-              "preview": "auroras",
-              "perf": -4,
-              "arg": true
-            }
-          ]
+          "name": "Procedural Night Sky",
+          "desc": "Generate a night sky without using any textures.",
+          "warn": 1,
+          "value": "procedural",
+          "thumbnail": "night_sky/procedural",
+          "preview": "night_sky/procedural_big"
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the auroras.",
-          "key": "aurora_color",
-          "requires": {
-            "night_sky/1": 1
-          },
-          "default": [0.465, 2, 0.833]
+          "name": "Moonlit Fog",
+          "desc": "Same as the Procedural Night Sky, but also changes the moon to be much bigger and adds a light layer of fog that is dynamically lit up by the moon based on where the moon is and what phase it's in.",
+          "warn": 1,
+          "value": "moonlit_fog",
+          "thumbnail": "night_sky/moonlit_fog",
+          "preview": "night_sky/moonlit_fog_big"
         }
       ]
+    },
+    "auroras": {
+      "name": "Auroras",
+      "desc": "Enable auroras at night.",
+      "warn": 2,
+      "category": "overworld_sky",
+      "preview": "auroras.webm",
+      "type": "bool",
+      "condition": "post&!(of_custom_sky_overworld|sodium|shaderpack)",
+      "incompatText": "Requires Fabulous graphics and is incompatible with Sodium, shaderpacks, and OF Custom Sky"
+    },
+    "aurora_color": {
+      "name": "Aurora Color",
+      "desc": "Choose a color for the auroras.",
+      "category": "overworld_sky",
+      "type": "vec3_color",
+      "default": [0.465, 2, 0.833],
+      "condition": "auroras"
     },
     "end_sky": {
       "name": "End Sky",
-      "command": "end_sky/configure",
-      "settings": [
+      "desc": "In vanilla Minecraft, the End sky uses a skybox with a tiling texture. Resource packs can change the texture used for this or, with Optifine or core shaders, override how the skybox is drawn entirely.",
+      "category": "end_sky",
+      "type": "select",
+      "condition": "!sodium & !shaderpack",
+      "incompatText": "Incompatible with Sodium and shaderpacks",
+      "options": [
         {
-          "type": "select",
-          "desc": "Minecraft's End skybox repeats a texture 16x16 for each side of the box. Dokucraft can use Optifine or core shaders to override this behavior and create something spectacular in the End sky.",
-          "key": "sky",
-          "options": [
-            {
-              "name": "Optifine Skybox",
-              "desc": "Uses Optifine's Custom Sky features to apply a custom static skybox.",
-              "preview": "end_sky/optifine",
-              "default": true,
-              "arg": "optifine"
-            },
-            {
-              "name": "Vanilla",
-              "desc": "Uses the vanilla End skybox with a custom texture.",
-              "preview": "end_sky/vanilla",
-              "perf": 0,
-              "arg": "vanilla"
-            },
-            {
-              "name": "Otherworldly Rift",
-              "desc": "Uses core shaders to create an animated sky. Also opens up extra customization options.",
-              "preview": "end_sky/rift",
-              "perf": -3,
-              "arg": "rift"
-            },
-            {
-              "name": "Cloudy",
-              "desc": "Uses core shaders to create an animated sky. Also opens up extra customization options.",
-              "preview": "end_sky/cloudy",
-              "perf": -3,
-              "arg": "cloudy"
-            }
-          ]
+          "name": "Vanilla",
+          "desc": "Use the tiling vanilla End skybox with a custom texture.",
+          "value": "vanilla",
+          "thumbnail": "end_sky/vanilla",
+          "preview": "end_sky/vanilla_big"
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the glow from the Otherworldly Rift.",
-          "key": "rift_color",
-          "requires": {
-            "end_sky/0": 2
-          },
-          "default": {
-            "light": [1.0, 0.1, 0.3],
-            "dark": [0.7, 0.3, 0.15],
-            "high": [0.1, 0.45, 0.9],
-            "dwarven": [0.5, 0.2, 1.0]
-          }
+          "name": "Optifine",
+          "desc": "Use Optifine's Custom Sky feature to replace the skybox.",
+          "value": "optifine",
+          "thumbnail": "end_sky/optifine",
+          "preview": "end_sky/optifine_big",
+          "condition": "optifine",
+          "incompatText": "Requires Optifine"
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the stars outside the Otherworldly Rift.",
-          "key": "os_color",
-          "requires": {
-            "end_sky/0": 2
-          },
-          "default": {
-            "light": [0.9, 0.6, 0.9],
-            "dark": [0.9, 0.8, 0.6],
-            "high": [0.4, 0.7, 0.9],
-            "dwarven": [0.8, 0.6, 1.1]
-          }
+          "name": "Otherworldy Rift",
+          "desc": "Use core shaders to replace the skybox with an animated rift into another world.",
+          "warn": 1,
+          "value": "rift",
+          "thumbnail": "end_sky/rift",
+          "preview": "end_sky/rift_big.webm"
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the nebulae outside the Otherworldly Rift.",
-          "key": "on_color",
-          "requires": {
-            "end_sky/0": 2
-          },
-          "default": {
-            "light": [0.8, 0.1, 0.9],
-            "dark": [0.8, 0.3, 0.8],
-            "high": [0.2, 0.6, 0.8],
-            "dwarven": [0.6, 0.1, 0.9]
-          }
+          "name": "Cloudy",
+          "desc": "Use core shaders to replace the skybox with stars and animated clouds.",
+          "warn": 1,
+          "value": "cloudy",
+          "thumbnail": "end_sky/cloudy",
+          "preview": "end_sky/cloudy_big.webm"
+        }
+      ]
+    },
+    "end_sky_rift_color": {
+      "name": "Rift Color",
+      "desc": "Choose a color for the glow from the Otherworldly Rift.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": {
+        "light": [1, 0.1, 0.3],
+        "dark": [0.7, 0.3, 0.15],
+        "high": [0.1, 0.45, 0.9],
+        "dwarven": [0.5, 0.2, 1]
+      },
+      "condition": "end_sky:rift"
+    },
+    "end_sky_rift_os_color": {
+      "name": "Outside The Rift - Star Color",
+      "desc": "Choose a color for the stars outside the Otherworldly Rift.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.9, 0.6, 0.9],
+        "dark": [0.9, 0.8, 0.6],
+        "high": [0.4, 0.7, 0.9],
+        "dwarven": [0.8, 0.6, 1.1]
+      },
+      "condition": "end_sky:rift"
+    },
+    "end_sky_rift_on_color": {
+      "name": "Outside The Rift - Nebulae Color",
+      "desc": "Choose a color for the nebulae outside the Otherworldly Rift.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.8, 0.1, 0.9],
+        "dark": [0.8, 0.3, 0.8],
+        "high": [0.2, 0.6, 0.8],
+        "dwarven": [0.6, 0.1, 0.9]
+      },
+      "condition": "end_sky:rift"
+    },
+    "end_sky_rift_is_color": {
+      "name": "Inside The Rift - Star Color",
+      "desc": "Choose a color for the stars inside the Otherworldly Rift.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.6, 1.2, 2.8],
+        "dark": [1, 1.2, 2],
+        "high": [1.2, 1, 2.4],
+        "dwarven": [2.3, 1.4, 0.3]
+      },
+      "condition": "end_sky:rift"
+    },
+    "end_sky_rift_in_color": {
+      "name": "Inside The Rift - Nebulae Color",
+      "desc": "Choose a color for the nebulae inside the Otherworldly Rift.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.2, 0.5, 0.9],
+        "dark": [0.4, 0.5, 0.8],
+        "high": [0.5, 0.35, 0.9],
+        "dwarven": [0.9, 0.2, 0.05]
+      },
+      "condition": "end_sky:rift"
+    },
+    "end_sky_cloudy_base_color": {
+      "name": "Cloudy Sky - Base Color",
+      "desc": "Choose a base color for the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.05, 0.067, 0.133],
+      "condition": "end_sky:cloudy"
+    },
+    "end_sky_cloudy_primary_color": {
+      "name": "Cloudy Sky - Primary Color",
+      "desc": "Choose a color for the primary clouds in the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.819, 0.839, 0.925],
+      "condition": "end_sky:cloudy"
+    },
+    "end_sky_cloudy_primary_fade_color_1": {
+      "name": "Cloudy Sky - Primary Fade Color 1",
+      "desc": "Choose a color for the primary clouds where they fade out in the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.6, 0.4, 1.2],
+      "condition": "end_sky:cloudy"
+    },
+    "end_sky_cloudy_primary_fade_color_2": {
+      "name": "Cloudy Sky - Primary Fade Color 2",
+      "desc": "Choose a secondary color for the primary clouds where they fade out in the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.7, 0.8, 1.6],
+      "condition": "end_sky:cloudy"
+    },
+    "end_sky_cloudy_secondary_color": {
+      "name": "Cloudy Sky - Secondary Color",
+      "desc": "Choose a color for the secondary clouds in the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.501, 0.549, 0.741],
+      "condition": "end_sky:cloudy"
+    },
+    "end_sky_cloudy_star_color": {
+      "name": "Cloudy Sky - Star Color",
+      "desc": "Choose a color for the stars in the Cloudy sky.",
+      "category": "end_sky",
+      "type": "vec3_color",
+      "default": [0.8, 0.8, 0.9],
+      "condition": "end_sky:cloudy"
+    },
+    "campfire_color": {
+      "name": "Campfire Color",
+      "desc": "Choose a color for your campfires.",
+      "type": "select",
+      "display": "grid",
+      "default": "default",
+      "options": [
+        {
+          "name": "White",
+          "value": "white",
+          "thumbnail": "campfire/white.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the stars inside the Otherworldly Rift.",
-          "key": "is_color",
-          "requires": {
-            "end_sky/0": 2
-          },
-          "default": {
-            "light": [0.6, 1.2, 2.8],
-            "dark": [1.0, 1.2, 2.0],
-            "high": [1.2, 1.0, 2.4],
-            "dwarven": [2.3, 1.4, 0.3]
-          }
+          "name": "Orange",
+          "value": "orange",
+          "thumbnail": "campfire/orange.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the nebulae inside the Otherworldly Rift.",
-          "key": "in_color",
-          "requires": {
-            "end_sky/0": 2
-          },
-          "default": {
-            "light": [0.2, 0.5, 0.9],
-            "dark": [0.4, 0.5, 0.8],
-            "high": [0.5, 0.35, 0.9],
-            "dwarven": [0.9, 0.2, 0.05]
-          }
+          "name": "Magenta",
+          "value": "magenta",
+          "thumbnail": "campfire/magenta.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a base color for the Cloudy sky.",
-          "key": "c_base_color",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.05, 0.067, 0.133]
+          "name": "Light Blue",
+          "value": "light_blue",
+          "thumbnail": "campfire/light_blue.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the primary clouds in the Cloudy sky.",
-          "key": "c_strong_color",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.819, 0.839, 0.925]
+          "name": "Yellow",
+          "value": "yellow",
+          "thumbnail": "campfire/yellow.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the primary clouds where they fade out in the Cloudy sky.",
-          "key": "c_strong_color_1",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.6, 0.4, 1.2]
+          "name": "Lime",
+          "value": "lime",
+          "thumbnail": "campfire/lime.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a secondary color for the primary clouds where they fade out in the Cloudy sky.",
-          "key": "c_strong_color_2",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.7, 0.8, 1.6]
+          "name": "Pink",
+          "value": "pink",
+          "thumbnail": "campfire/pink.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the secondary clouds in the Cloudy sky.",
-          "key": "c_weak_color",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.501, 0.549, 0.741]
+          "name": "Gray",
+          "value": "gray",
+          "thumbnail": "campfire/gray.gif",
+          "tnPixels": true
         },
         {
-          "type": "vec3_color",
-          "desc": "Choose a color for the stars in the Cloudy sky.",
-          "key": "c_stars_color",
-          "requires": {
-            "end_sky/0": 3
-          },
-          "default": [0.8, 0.8, 0.9]
+          "name": "Light Gray",
+          "value": "light_gray",
+          "thumbnail": "campfire/light_gray.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Cyan",
+          "value": "cyan",
+          "thumbnail": "campfire/cyan.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Purple",
+          "value": "purple",
+          "thumbnail": "campfire/purple.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Blue",
+          "value": "blue",
+          "thumbnail": "campfire/blue.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Brown",
+          "value": "brown",
+          "thumbnail": "campfire/brown.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Green",
+          "value": "green",
+          "thumbnail": "campfire/green.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Red",
+          "value": "red",
+          "thumbnail": "campfire/red.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Black",
+          "value": "black",
+          "thumbnail": "campfire/black.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Default",
+          "value": "default",
+          "thumbnail": "campfire/default.gif",
+          "tnPixels": true
+        }
+      ]
+    },
+    "soul_campfire_color": {
+      "name": "Soul Campfire Color",
+      "desc": "Choose a color for your soul campfires.",
+      "type": "select",
+      "display": "grid",
+      "default": "default",
+      "options": [
+        {
+          "name": "White",
+          "value": "white",
+          "thumbnail": "campfire/white.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Orange",
+          "value": "orange",
+          "thumbnail": "campfire/orange.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Magenta",
+          "value": "magenta",
+          "thumbnail": "campfire/magenta.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Light Blue",
+          "value": "light_blue",
+          "thumbnail": "campfire/light_blue.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Yellow",
+          "value": "yellow",
+          "thumbnail": "campfire/yellow.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Lime",
+          "value": "lime",
+          "thumbnail": "campfire/lime.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Pink",
+          "value": "pink",
+          "thumbnail": "campfire/pink.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Gray",
+          "value": "gray",
+          "thumbnail": "campfire/gray.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Light Gray",
+          "value": "light_gray",
+          "thumbnail": "campfire/light_gray.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Cyan",
+          "value": "cyan",
+          "thumbnail": "campfire/cyan.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Purple",
+          "value": "purple",
+          "thumbnail": "campfire/purple.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Blue",
+          "value": "blue",
+          "thumbnail": "campfire/blue.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Brown",
+          "value": "brown",
+          "thumbnail": "campfire/brown.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Green",
+          "value": "green",
+          "thumbnail": "campfire/green.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Red",
+          "value": "red",
+          "thumbnail": "campfire/red.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Black",
+          "value": "black",
+          "thumbnail": "campfire/black.gif",
+          "tnPixels": true
+        },
+        {
+          "name": "Default",
+          "value": "default",
+          "thumbnail": "campfire/soul.gif",
+          "tnPixels": true
         }
       ]
     },
     "leaves_model": {
       "name": "Leaves Model",
-      "command": "leaves_model/configure",
-      "settings": [
+      "desc": "Choose a model for the leaves blocks.",
+      "type": "select",
+      "default": "varied_height",
+      "options": [
         {
-          "type": "select",
-          "desc": "Choose a model for the leaves blocks.",
-          "key": "model",
-          "options": [
-            {
-              "name": "Varied height",
-              "desc": "Leaves have random height differences.",
-              "default": true,
-              "arg": "varied_height"
-            },
-            {
-              "name": "Vanilla",
-              "desc": "Use the standard simple block model.",
-              "perf": 0,
-              "arg": "vanilla"
-            },
-            {
-              "name": "Bushy leaves",
-              "desc": "Leaves blocks have some leaves that stick out to give them a bushy look.",
-              "perf": 0,
-              "arg": "bushy"
-            }
-          ]
+          "name": "Varied height",
+          "desc": "Leaves have random height differences.",
+          "value": "varied_height",
+          "thumbnail": "leaves_model/varied_height.gif"
+        },
+        {
+          "name": "Vanilla",
+          "desc": "Use the standard simple block model.",
+          "value": "vanilla",
+          "thumbnail": "leaves_model/vanilla"
+        },
+        {
+          "name": "Bushy leaves",
+          "desc": "Leaves blocks have some leaves that stick out to give them a bushy look.",
+          "value": "bushy",
+          "thumbnail": "leaves_model/bushy"
         }
       ]
     },
     "waving_plants": {
       "name": "Waving Plants",
-      "command": "waving_plants/configure",
-      "settings": [
-        {
-          "type": "select",
-          "desc": "Dokucraft can use core shaders to make things like vegitation less static. This option makes plants wave slightly, as if the wind was pushing them around.",
-          "key": "enabled",
-          "options": [
-            {
-              "name": "Disabled",
-              "command": "disable",
-              "perf": 1,
-              "arg": false
-            },
-            {
-              "name": "Enabled",
-              "default": true,
-              "preview": "waving_plant",
-              "arg": true
-            }
-          ]
-        }
-      ]
+      "desc": "Dokucraft can use core shaders to make things like vegitation less static. This option makes plants wave slightly, as if the wind was pushing them around.",
+      "type": "bool",
+      "default": true,
+      "condition": "!sodium & !shaderpack"
     },
-    "swaying_lanterns": {
-      "name": "Swaying Lanterns",
-      "command": "swaying_lanterns/configure",
-      "settings": [
-        {
-          "type": "select",
-          "desc": "Core shaders can be used to make hanging lanterns sway back and forth, as if they were lightly pushed by the wind.",
-          "key": "enabled",
-          "options": [
-            {
-              "name": "Disabled",
-              "command": "disable",
-              "perf": 1,
-              "arg": false
-            },
-            {
-              "name": "Enabled",
-              "default": true,
-              "preview": "swaying_lantern",
-              "arg": true
-            }
-          ]
-        }
-      ]
+    "swinging_lanterns": {
+      "name": "Swinging Lanterns",
+      "desc": "Core shaders can be used to make hanging lanterns swing back and forth, as if they were lightly pushed by the wind.",
+      "type": "bool",
+      "default": true,
+      "condition": "!sodium & !shaderpack"
     },
-    "campfire": {
-      "name": "Campfire Color",
-      "command": "campfire/configure",
-      "settings": [
+    "flip_shovels": {
+      "name": "Shovel Rotation",
+      "desc": "Choose how shovels should be displayed.",
+      "type": "select",
+      "options": [
         {
-          "type": "select",
-          "desc": "Choose a color for the campfires.",
-          "key": "color",
-          "options": [
-            {
-              "name": "Default",
-              "desc": "Regular fire color.",
-              "default": true,
-              "arg": "default"
-            },
-            {
-              "name": "White",
-              "perf": 0,
-              "arg": "white"
-            },
-            {
-              "name": "Orange",
-              "perf": 0,
-              "arg": "orange"
-            },
-            {
-              "name": "Magenta",
-              "perf": 0,
-              "arg": "magenta"
-            },
-            {
-              "name": "Light Blue",
-              "perf": 0,
-              "arg": "light_blue"
-            },
-            {
-              "name": "Yellow",
-              "perf": 0,
-              "arg": "yellow"
-            },
-            {
-              "name": "Lime",
-              "perf": 0,
-              "arg": "lime"
-            },
-            {
-              "name": "Pink",
-              "perf": 0,
-              "arg": "pink"
-            },
-            {
-              "name": "Gray",
-              "perf": 0,
-              "arg": "gray"
-            },
-            {
-              "name": "Light Gray",
-              "perf": 0,
-              "arg": "light_gray"
-            },
-            {
-              "name": "Cyan",
-              "perf": 0,
-              "arg": "cyan"
-            },
-            {
-              "name": "Purple",
-              "perf": 0,
-              "arg": "purple"
-            },
-            {
-              "name": "Blue",
-              "perf": 0,
-              "arg": "blue"
-            },
-            {
-              "name": "Brown",
-              "perf": 0,
-              "arg": "brown"
-            },
-            {
-              "name": "Green",
-              "perf": 0,
-              "arg": "green"
-            },
-            {
-              "name": "Red",
-              "perf": 0,
-              "arg": "red"
-            },
-            {
-              "name": "Black",
-              "perf": 0,
-              "arg": "black"
-            }
-          ]
+          "name": "Left",
+          "desc": "Shovels point forwards when held to match the animation when used.",
+          "value": "left",
+          "thumbnail": "shovels/left",
+          "tnPixels": true
         },
         {
-          "type": "select",
-          "desc": "Choose a color for the soul campfires.",
-          "key": "soul_color",
-          "options": [
-            {
-              "name": "Default",
-              "desc": "Regular fire color.",
-              "default": true,
-              "arg": "default"
-            },
-            {
-              "name": "White",
-              "perf": 0,
-              "arg": "white"
-            },
-            {
-              "name": "Orange",
-              "perf": 0,
-              "arg": "orange"
-            },
-            {
-              "name": "Magenta",
-              "perf": 0,
-              "arg": "magenta"
-            },
-            {
-              "name": "Light Blue",
-              "perf": 0,
-              "arg": "light_blue"
-            },
-            {
-              "name": "Yellow",
-              "perf": 0,
-              "arg": "yellow"
-            },
-            {
-              "name": "Lime",
-              "perf": 0,
-              "arg": "lime"
-            },
-            {
-              "name": "Pink",
-              "perf": 0,
-              "arg": "pink"
-            },
-            {
-              "name": "Gray",
-              "perf": 0,
-              "arg": "gray"
-            },
-            {
-              "name": "Light Gray",
-              "perf": 0,
-              "arg": "light_gray"
-            },
-            {
-              "name": "Cyan",
-              "perf": 0,
-              "arg": "cyan"
-            },
-            {
-              "name": "Purple",
-              "perf": 0,
-              "arg": "purple"
-            },
-            {
-              "name": "Blue",
-              "perf": 0,
-              "arg": "blue"
-            },
-            {
-              "name": "Brown",
-              "perf": 0,
-              "arg": "brown"
-            },
-            {
-              "name": "Green",
-              "perf": 0,
-              "arg": "green"
-            },
-            {
-              "name": "Red",
-              "perf": 0,
-              "arg": "red"
-            },
-            {
-              "name": "Black",
-              "perf": 0,
-              "arg": "black"
-            }
-          ]
+          "name": "Right",
+          "desc": "Shovels point upwards when held to match other tools.",
+          "value": "right",
+          "thumbnail": "shovels/right",
+          "tnPixels": true
+        }
+      ]
+    },
+    "fresnel": {
+      "name": "Fresnel Effect",
+      "desc": "In vanilla Minecraft, water and other translucent surfaces always have the same amount of transparency as their texture. While that seems to make a lot of sense, it has some downsides in-game and it is not how, for example, water looks in real life. It is harder to see through real water surfaces when viewed from shallow angles because of the Fresnel effect, which makes the amount of reflectance of a surface depend on the viewing angle.\n\nThis option tries to emulate the Fresnel effect by making translucent materials more opaque when viewed from shallow angles. This means that when you look out towards the horizon over the ocean from a beach, the water at the horizon will be a lot more opaque than the water at your feet. When viewed from straight above, there will not be much difference. This helps to hide the ugly edges of the world that you can easily see through the water normally.",
+      "type": "bool",
+      "default": true,
+      "condition": "!sodium & !shaderpack",
+      "preview": "fresnel.webm"
+    },
+    "glass_panes": {
+      "name": "Glass Panes",
+      "desc": "Choose a look for all glass panes.",
+      "type": "select",
+      "options": [
+        {
+          "name": "Decorated",
+          "desc": "Glass panes have fancy patterns to make them different from the glass blocks.",
+          "value": "decorated",
+          "thumbnail": "glass_panes/decorated",
+          "tnPixels": true
+        },
+        {
+          "name": "Clear",
+          "desc": "Glass panes use the same texture as regular glass blocks.",
+          "value": "clear",
+          "thumbnail": "glass_panes/clear",
+          "tnPixels": true
         }
       ]
     }
