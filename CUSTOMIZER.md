@@ -15,7 +15,7 @@ Here is an example customizer: (This is standard JSON, so comments would not be 
   ...
   "customizers": {
     "example_customizer": [
-      "example_option_1", // Unconditional option, akways there
+      "example_option_1", // Unconditional option, always there
       "example_option_2",
       { // Conditional option, only there if version is between 3 and 5, inclusive
         "option": "example_option_3", // Option name
