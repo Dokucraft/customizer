@@ -3,6 +3,6 @@
     "textures": {
         "all": "block/leaves/oak_leaves",
         "extra": "block/leaves/oak_leaves_extra",
-        "snow": "block/leaves/oak_leaves_snow"
+        "snow": "block/leaves/leaves_snow"
     }
 }

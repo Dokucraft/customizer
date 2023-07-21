@@ -13,5 +13,6 @@ switch (Config.leaves_model) {
     break
   case 'bushy':
     await Customizer.add('leaves_model/bushy_leaves', 'assets/minecraft')
+		Customizer.delete('assets/minecraft/optifine/colormap/custom/birch.properties')
     break
 }
