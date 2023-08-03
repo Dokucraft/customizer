@@ -29,6 +29,7 @@
       },
       "flip_shovels",
       "leaves_model",
+      "inset_doors",
       "waving_plants",
       "swinging_lanterns",
       "campfire_color",
@@ -689,6 +690,13 @@
           "tnPixels": true
         }
       ]
+    },
+    "inset_doors": {
+      "name": "Inset Doors",
+      "desc": "Move doors slightly into their frame so they are not perfectly flush with the wall.",
+      "preview": "inset_doors.webm",
+      "type": "bool",
+      "default": true
     }
   }
 }
