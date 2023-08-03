@@ -702,6 +702,7 @@
     "post_sun": {
       "name": "Animated Sun",
       "desc": "Animate the sun and draw it as part of the skybox to improve the blending with the sky.",
+      "category": "overworld_sky",
       "preview": "post_sun.webm",
       "type": "bool",
       "condition": "post & !of_custom_sky_overworld"
