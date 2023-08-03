@@ -11,6 +11,7 @@ if (!Config.optifine) {
 }
 
 // Overworld Sky
+if (Config.post_sun) await import('misc/enable_post_sun')
 if (Config.night_sky) await import('night_sky/configure')
 if (Config.auroras) await import('night_sky/enable_auroras')
 

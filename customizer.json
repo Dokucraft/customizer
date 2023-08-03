@@ -6,6 +6,7 @@
       "shaderpack",
       "sodium",
       "of_custom_sky_overworld",
+      { "option": "post_sun", "minVersion": 2 },
       "aurora_color",
       { "option": "night_sky", "maxVersion": 1 },
       { "option": "night_sky_v2", "minVersion": 2 },
@@ -697,6 +698,13 @@
       "preview": "inset_doors.webm",
       "type": "bool",
       "default": true
+    },
+    "post_sun": {
+      "name": "Animated Sun",
+      "desc": "Animate the sun and draw it as part of the skybox to improve the blending with the sky.",
+      "preview": "post_sun.webm",
+      "type": "bool",
+      "condition": "post & !of_custom_sky_overworld"
     }
   }
 }
