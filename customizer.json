@@ -755,6 +755,7 @@
       "category": "overworld_sky",
       "preview": "sky_preset_1.webm",
       "type": "bool",
+      "warn": 1,
       "condition": "post & !of_custom_sky_overworld & !sodium"
     },
     "darkness_effect": {
