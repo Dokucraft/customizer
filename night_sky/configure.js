@@ -17,7 +17,12 @@ switch (Config.night_sky) {
       // Enable the effect
       Customizer.shaders.enable('assets/minecraft/shaders/config.txt', 'ENABLE_POST_MOON_PHASES'),
       Customizer.shaders.enable(postShader, 'ENABLE_POST_MOON')
-        .then(() => Customizer.shaders.setScalar(postShader, 'NIGHT_SKY', 2)),
+        .then(() => Customizer.shaders.setScalar(postShader, 'NIGHT_SKY', 2))
+        .then(() => {
+          if (Customizer.version >= 4) {
+            return Customizer.shaders.enable(postShader, 'ENABLE_NIGHT_FOG')
+          }
+        }),
 
       // Add information about the extra moon texture for the shader
       Customizer.readJSON('assets/minecraft/shaders/program/skybox.json').then(shader => {

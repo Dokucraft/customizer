@@ -35,6 +35,45 @@
       "swinging_lanterns",
       "campfire_color",
       "soul_campfire_color"
+    ],
+    "1.20.2": [
+      "post",
+      "optifine",
+      "shaderpack",
+      "sodium",
+      "of_custom_sky_overworld",
+      "fabulous_firmament",
+      "post_sun",
+      "aurora_color",
+      "night_sky_v2",
+      "auroras",
+      "end_sky",
+      "end_sky_rift_color",
+      "end_sky_rift_os_color",
+      "end_sky_rift_on_color",
+      "end_sky_rift_is_color",
+      "end_sky_rift_in_color",
+      "end_sky_cloudy_base_color",
+      "end_sky_cloudy_primary_color",
+      "end_sky_cloudy_primary_fade_color_1",
+      "end_sky_cloudy_primary_fade_color_2",
+      "end_sky_cloudy_secondary_color",
+      "end_sky_cloudy_star_color",
+      "darkness_effect",
+      "wither_effect",
+      "speed_effect",
+      "fresnel",
+      "better_lava",
+      { "option": "glass_panes",
+        "packs": [ "light", "dark", "high" ]
+      },
+      "flip_shovels",
+      "leaves_model",
+      "inset_doors",
+      "waving_plants",
+      "swinging_lanterns",
+      "campfire_color",
+      "soul_campfire_color"
     ]
   },
   "categories": {
@@ -46,6 +85,10 @@
     "overworld_sky": {
       "name": "Overworld Sky",
       "desc": "Some mods, like Optifine, let resource packs customize how the sky is drawn. Post-processing shaders allow Dokucraft to draw a custom sky without requiring any mods."
+    },
+    "screen_effects": {
+      "name": "Screen Effects",
+      "desc": "Buffs and debuffs, also known as mob effects, usually only add a small icon in the corner of your screen to tell you that you are affected by them. The options below try to improve immersion by changing certain effects to add a custom effect to the screen while you are affected by them."
     },
     "end_sky": {"name": "End Sky"}
   },
@@ -179,8 +222,8 @@
       "category": "overworld_sky",
       "key": "night_sky",
       "type": "select",
-      "condition": "post&!sodium&!of_custom_sky_overworld",
-      "incompatText": "Requires Fabulous graphics and is incompatible with Sodium and OF Custom Sky",
+      "condition": "post&!sodium&!of_custom_sky_overworld&!fabulous_firmament",
+      "incompatText": "Requires Fabulous graphics, is incompatible with Sodium and OF Custom Sky, and is overridden by Fabulous Firmament",
       "options": [
         {
           "name": "Skybox",
@@ -705,7 +748,36 @@
       "category": "overworld_sky",
       "preview": "post_sun.webm",
       "type": "bool",
-      "condition": "post & !of_custom_sky_overworld"
+      "condition": "post & !of_custom_sky_overworld & !sodium & !fabulous_firmament"
+    },
+    "fabulous_firmament": {
+      "name": "Fabulous Firmament",
+      "desc": "Replaces the overworld sky with one that has clouds that are dynamically lit by the sun and moon. These clouds are on a separate layer, obstructing the sun and moon instead of being behind them, and they stay visible even at night.\n\nThis option overrides the Animated Sun and Night Sky options, enabling the animated sun and the Moonlit Fog night sky. If enabled, the auroras will also light up the clouds from behind.",
+      "category": "overworld_sky",
+      "preview": "sky_preset_1.webm",
+      "type": "bool",
+      "condition": "post & !of_custom_sky_overworld & !sodium"
+    },
+    "darkness_effect": {
+      "name": "Darkness Effect",
+      "desc": "Adds a subtle whispy effect around the screen while you have the darkness effect.",
+      "category": "screen_effects",
+      "preview": "mob_effects/darkness.webm",
+      "type": "bool"
+    },
+    "wither_effect": {
+      "name": "Wither Effect",
+      "desc": "Adds a pulsing effect around the screen while you have the wither effect.",
+      "category": "screen_effects",
+      "preview": "mob_effects/wither.webm",
+      "type": "bool"
+    },
+    "speed_effect": {
+      "name": "Speed Effect",
+      "desc": "Adds speed lines around the screen while you have the speed effect.",
+      "category": "screen_effects",
+      "preview": "mob_effects/speed.webm",
+      "type": "bool"
     }
   }
 }
