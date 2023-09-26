@@ -188,8 +188,7 @@
       "desc": "Use Optifine's Custom Sky feature to draw a mostly static skybox in the overworld instead of requiring post-processing shaders.",
       "category": "overworld_sky",
       "type": "bool",
-      "condition": "optifine",
-      "incompatText": "Requires Optifine"
+      "condition": "optifine"
     },
     "night_sky": {
       "name": "Night Sky",
