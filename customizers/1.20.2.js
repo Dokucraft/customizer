@@ -10,6 +10,14 @@ if (!Config.optifine) {
   Customizer.delete('assets/minecraft/optifine/sky/world0')
 }
 
+if (Config.sodium) {
+  // If Sodium is used, get rid of the Fabulous skybox, it's not compatible
+  Customizer.delete(
+    'assets/minecraft/shaders/post',
+    'assets/minecraft/shaders/program',
+  )
+}
+
 // Overworld Sky
 if (Config.fabulous_firmament) await import('atmosphere/fabulous_firmament')
 if (Config.post_sun) await import('misc/enable_post_sun')
