@@ -109,7 +109,7 @@
           "color": "#8c2c2d"
         },
         "b": {
-          "name": "Sodium",
+          "name": "Sodium/Rubidium",
           "option": "sodium",
           "color": "#75be61"
         },
@@ -167,9 +167,9 @@
       "incompatText": "Incompatible with Fabulous graphics"
     },
     "sodium": {
-      "name": "I use Sodium",
+      "name": "I use Sodium or Rubidium",
       "sidebar": "Sodium",
-      "desc": "Sodium disables some of the shaders in resource packs that allow the pack to create certain effects.",
+      "desc": "Sodium, and forks of it, like Rubidium, disables some of the shaders in resource packs that allow the pack to create certain effects.",
       "category": "game_config",
       "type": "bool",
       "condition": "!optifine",
