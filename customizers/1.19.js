@@ -18,6 +18,9 @@ if (Config.sodium) {
   )
 }
 
+// If Mods are used, replace the Blocks Atlas and Add Affected Textures
+if (Config.modded) await import('modded/modded')
+
 // Overworld Sky
 if (Config.post_sun) await import('misc/enable_post_sun')
 if (Config.night_sky) await import('night_sky/configure')

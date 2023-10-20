@@ -5,6 +5,7 @@
       "optifine",
       "shaderpack",
       "sodium",
+      "modded",
       "of_custom_sky_overworld",
       { "option": "post_sun", "minVersion": 2 },
       "aurora_color",
@@ -41,6 +42,7 @@
       "optifine",
       "shaderpack",
       "sodium",
+      "modded",
       "of_custom_sky_overworld",
       "fabulous_firmament",
       "post_sun",
@@ -97,7 +99,8 @@
       "post": false,
       "optifine": false,
       "shaderpack": false,
-      "sodium": false
+      "sodium": false,
+      "modded": false
     },
     "displays": [
       {
@@ -174,6 +177,13 @@
       "type": "bool",
       "condition": "!optifine",
       "incompatText": "Incompatible with Optifine"
+    },
+		"modded": {
+      "name": "I am Playing with Mods",
+      "sidebar": "Modded",
+      "desc": "Some Mods use the default path for some textures, removes some blocks from the exclusion list in the Atlas and adds the affected textures.",
+      "category": "game_config",
+      "type": "bool"
     },
     "better_lava": {
       "name": "Better Lava",
