@@ -5,7 +5,7 @@
       "optifine",
       "shaderpack",
       "sodium",
-      "modded",
+      { "option": "modded", "minVersion": 2 },
       "of_custom_sky_overworld",
       { "option": "post_sun", "minVersion": 2 },
       "aurora_color",
@@ -99,8 +99,7 @@
       "post": false,
       "optifine": false,
       "shaderpack": false,
-      "sodium": false,
-      "modded": false
+      "sodium": false
     },
     "displays": [
       {
@@ -179,9 +178,9 @@
       "incompatText": "Incompatible with Optifine"
     },
 		"modded": {
-      "name": "I am Playing with Mods",
+      "name": "I am playing with mods",
       "sidebar": "Modded",
-      "desc": "Some Mods use the default path for some textures, removes some blocks from the exclusion list in the Atlas and adds the affected textures.",
+      "desc": "Some mods use the default path for some textures. This removes some textures from the exclusion list in the atlas and adds the affected textures.",
       "category": "game_config",
       "type": "bool"
     },
