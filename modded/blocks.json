@@ -98,7 +98,7 @@
     { "type": "filter",
       "pattern": {
         "namespace": "minecraft",
-        "path": "block/(dandelion|dead_bush||weeping_vines|slime_block)$"
+        "path": "block/weeping_vines"
       }
     },
     { "type": "filter",
