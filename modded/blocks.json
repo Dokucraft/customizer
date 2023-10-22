@@ -98,12 +98,6 @@
     { "type": "filter",
       "pattern": {
         "namespace": "minecraft",
-        "path": "block/weeping_vines"
-      }
-    },
-    { "type": "filter",
-      "pattern": {
-        "namespace": "minecraft",
         "path": "block/fletching_table_(front|side)$"
       }
     },
