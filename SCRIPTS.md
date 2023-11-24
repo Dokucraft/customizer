@@ -49,7 +49,7 @@ import myFunction from 'examples/test'
 
 // Dynamic versions of the above examples
 await import('examples/test')
-const myFunction = await import('examples/test').default
+const { default: myFunction } = await import('examples/test')
 ```
 Rules to follow for the import file paths:
 - The file extension should not be used. It will always assume the file extension is `.js`.
