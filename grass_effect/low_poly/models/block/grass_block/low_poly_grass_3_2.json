@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/grass_block/low_poly_grass_3",
+  "textures": {
+    "0": "minecraft:block/low_poly_grass_2"
+  }
+}

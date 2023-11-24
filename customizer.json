@@ -64,6 +64,7 @@
       "darkness_effect",
       "wither_effect",
       "speed_effect",
+      { "option": "grass_effect", "minVersion": 5 },
       "fresnel",
       "better_lava",
       { "option": "glass_panes",
@@ -787,6 +788,39 @@
       "category": "screen_effects",
       "preview": "mob_effects/speed.webm",
       "type": "bool"
+    },
+    "grass_effect": {
+      "name": "Grass Effect",
+      "desc": "Choose an effect for the regular grass block.",
+      "type": "select",
+      "condition": "!sodium & !shaderpack",
+      "incompatText": "Incompatible with Sodium and shaderpacks",
+      "options": [
+        {
+          "name": "None",
+          "desc": "Grass looks like it usually does, without any fancy effects.",
+          "value": "none",
+          "thumbnail": "grass/default",
+          "preview": "grass/default_big",
+          "tnPixels": true
+        },
+        {
+          "name": "Low-poly grass",
+          "desc": "Grass blocks have low-poly 3D grass blades that stick out on top.",
+          "value": "low_poly",
+          "thumbnail": "grass/low_poly_grass",
+          "preview": "grass/low_poly_grass.webm",
+          "warn": 1
+        },
+        {
+          "name": "Dense grass",
+          "desc": "Grass blocks have dense, more realistic-looking grass on top of them. This effect has various problems when viewed from certain distances/angles, but works fine in most regular gameplay.",
+          "value": "dense",
+          "thumbnail": "grass/dense_grass",
+          "preview": "grass/dense_grass.webm",
+          "warn": 1
+        }
+      ]
     }
   }
 }

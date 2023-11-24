@@ -39,6 +39,7 @@ if (Config.wither_effect) await import('mob_effects/wither')
 if (Config.speed_effect) await import('mob_effects/speed')
 
 // Miscellaneous
+if ('grass_effect' in Config && Config.grass_effect !== 'none') await import('grass_effect/grass_effect')
 if (Config.fresnel === false) await import('misc/disable_fresnel')
 if (Config.better_lava) await import('better_lava/enable')
 if (Config.glass_panes === 'clear') await import('misc/clear_glass_panes')

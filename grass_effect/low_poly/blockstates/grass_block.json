@@ -1,0 +1,74 @@
+{
+  "multipart": [
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "block/grass_block" },
+        { "model": "block/grass_block/1" },
+        { "model": "block/grass_block/2" },
+        { "model": "block/grass_block/3" },
+        { "model": "block/grass_block/4" },
+        { "model": "block/grass_block/5" },
+        { "model": "block/grass_block/6" },
+        { "model": "block/grass_block/7" },
+        { "model": "block/grass_block/8" },
+        { "model": "block/grass_block/9" }
+      ]
+    },
+    { "when": { "snowy": true },
+      "apply": [
+        { "model": "block/grass_block_snow" }
+      ]
+    },
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "block/empty", "weight": 1500 },
+        { "model": "block/grass_block/flowers", "weight": 1 },
+        { "model": "block/grass_block/flowers1", "weight": 1 },
+        { "model": "block/grass_block/flowers2", "weight": 1 },
+        { "model": "block/grass_block/flowers3", "weight": 1 },
+        { "model": "block/grass_block/flowers4", "weight": 1 },
+        { "model": "block/grass_block/flowers5", "weight": 1 }
+      ]
+    },
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "minecraft:block/grass_block/low_poly_grass_1" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4", "y": 270 }
+      ]
+    },
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "minecraft:block/grass_block/low_poly_grass_1_2" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2_2" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3_2" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4_2" },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1_2", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2_2", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3_2", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4_2", "y": 90 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1_2", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2_2", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3_2", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4_2", "y": 180 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_1_2", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_2_2", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_3_2", "y": 270 },
+        { "model": "minecraft:block/grass_block/low_poly_grass_4_2", "y": 270 }
+      ]
+    }
+  ]
+}

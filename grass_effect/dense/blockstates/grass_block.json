@@ -1,0 +1,16 @@
+{ "multipart": [
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "minecraft:block/grass_block" }
+      ]
+    },
+    { "when": { "snowy": true },
+      "apply": { "model": "minecraft:block/grass_block_snow" }
+    },
+    { "when": { "snowy": false },
+      "apply": [
+        { "model": "minecraft:block/grass_block_shells" }
+      ]
+    }
+  ]
+}
