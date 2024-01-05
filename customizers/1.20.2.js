@@ -38,11 +38,6 @@ if (Config.darkness_effect) await import('mob_effects/darkness')
 if (Config.wither_effect) await import('mob_effects/wither')
 if (Config.speed_effect) await import('mob_effects/speed')
 
-// Version 4 specific - Remove this when version 5 is released
-if (Customizer.version === 4 && (Config.darkness_effect || Config.wither_effect || Config.speed_effect)) {
-  await Customizer.add('mob_effects/version_4', 'assets/minecraft/shaders/core')
-}
-
 // Miscellaneous
 if ('grass_effect' in Config && Config.grass_effect !== 'none') await import('grass_effect/grass_effect')
 if (Config.fresnel === false) await import('misc/disable_fresnel')
