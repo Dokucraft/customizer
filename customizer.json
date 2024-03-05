@@ -98,29 +98,9 @@
   "stats": {
     "options": {
       "post": false,
-      "optifine": false,
-      "shaderpack": false,
-      "sodium": false
+      "shaderpack": false
     },
     "displays": [
-      {
-        "name": "Optifine or Sodium",
-        "type": "bool_pie",
-        "a": {
-          "name": "Optifine",
-          "option": "optifine",
-          "color": "#8c2c2d"
-        },
-        "b": {
-          "name": "Sodium/Rubidium",
-          "option": "sodium",
-          "color": "#75be61"
-        },
-        "neither": {
-          "name": "Neither",
-          "color": "gray"
-        }
-      },
       {
         "name": "Fabulous or shaderpacks",
         "type": "bool_pie",
@@ -152,16 +132,14 @@
       "incompatText": "Incompatible with shaderpacks"
     },
     "optifine": {
-      "name": "I use Optifine",
+      "name": "I use Optifine, or mods using the same folder structure",
       "sidebar": "Optifine",
-      "desc": "Optifine allows resource packs to do a lot of things that are not possible in the vanilla game.",
+      "desc": "Optifine allows resource packs to do a lot of things that are not possible in the vanilla game. Other mods may also be using Optifine's folder structure when implementing their own version of certain Optifine features like CTM and CEM.",
       "category": "game_config",
-      "type": "bool",
-      "condition": "!sodium",
-      "incompatText": "Incompatible with Sodium"
+      "type": "bool"
     },
     "shaderpack": {
-      "name": "I use a shaderpack with Optifine or Iris",
+      "name": "I use a shaderpack with Optifine, Iris, or Oculus",
       "sidebar": "Shaderpack",
       "desc": "Shaderpacks can change a lot about how the game is rendered which can cause problems with some assets or effects.",
       "category": "game_config",
@@ -170,18 +148,16 @@
       "incompatText": "Incompatible with Fabulous graphics"
     },
     "sodium": {
-      "name": "I use Sodium or Rubidium",
+      "name": "I use Sodium, Rubidium, or Embeddium",
       "sidebar": "Sodium",
-      "desc": "Sodium, and forks of it, like Rubidium, disables some of the shaders in resource packs that allow the pack to create certain effects.",
+      "desc": "Sodium, and forks of it, like Rubidium and Embeddium, disables some of the shaders in resource packs, preventing certain effects from functioning properly.",
       "category": "game_config",
-      "type": "bool",
-      "condition": "!optifine",
-      "incompatText": "Incompatible with Optifine"
+      "type": "bool"
     },
 		"modded": {
       "name": "I am playing with mods",
       "sidebar": "Modded",
-      "desc": "Some mods use the default path for some textures. This removes some textures from the exclusion list in the atlas and adds the affected textures.",
+      "desc": "By default, Dokucraft disables loading certain vanilla assets because they are not used in the resource pack. This option restores some of them that are often used by mods that add new blocks and items, fixing some problems with those mods.",
       "category": "game_config",
       "type": "bool"
     },
@@ -819,6 +795,28 @@
           "thumbnail": "grass/dense_grass",
           "preview": "grass/dense_grass.webm",
           "warn": 1
+        }
+      ]
+    },
+    "menu_background": {
+      "name": "Menu Background",
+      "desc": "Choose an effect for the background in various menus, including the pause menu, settings menu, and any others that use the background blur effect in default.",
+      "type": "select",
+      "options": [
+        {
+          "name": "Out of focus",
+          "desc": "Darkens, desaturates, and blurs the background, making it clear that it is not in focus.",
+          "value": "out_of_focus",
+          "thumbnail": "menu_bg/out_of_focus_small",
+          "preview": "menu_bg/out_of_focus",
+          "tnPixels": true
+        },
+        {
+          "name": "Parchment sketch",
+          "desc": "Transforms the background into a weathered parchment sketch.",
+          "value": "sketch",
+          "thumbnail": "menu_bg/sketch_small",
+          "preview": "menu_bg/sketch"
         }
       ]
     }

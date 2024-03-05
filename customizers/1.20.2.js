@@ -13,8 +13,10 @@ if (!Config.optifine) {
 if (Config.sodium) {
   // If Sodium is used, get rid of the Fabulous skybox, it's not compatible
   Customizer.delete(
-    'assets/minecraft/shaders/post',
-    'assets/minecraft/shaders/program',
+    'assets/minecraft/shaders/post/transparency.json',
+    'assets/minecraft/shaders/program/skybox.fsh',
+    'assets/minecraft/shaders/program/skybox.json',
+    'assets/minecraft/shaders/program/skybox.vsh',
   )
 }
 
