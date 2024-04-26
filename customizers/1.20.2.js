@@ -20,6 +20,7 @@ if (Config.sodium) {
   )
 }
 
+// If Shaderpacks are used, replace the Semi-Transparent Textures to Fix some Issues
 if (Config.shaderpack) {
   await Promise.all([
     Customizer.add(`shaderpack/block`, 'assets/minecraft/textures/block'),
