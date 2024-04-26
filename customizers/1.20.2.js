@@ -20,6 +20,13 @@ if (Config.sodium) {
   )
 }
 
+if (Config.shaderpack) {
+  await Promise.all([
+    Customizer.add(`shaderpack/block`, 'assets/minecraft/textures/block'),
+    Customizer.add(`shaderpack/optifine`, 'assets/minecraft/optifine/ctm')
+  ])
+}
+
 // If Mods are used, replace the Blocks Atlas and Add Affected Textures
 if (Config.modded) await import('modded/modded')
 
