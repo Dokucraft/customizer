@@ -1,6 +1,8 @@
+const end_sky = Config.end_sky ?? Config.end_sky_no_iviewrotmat
+
 // Delete the Optifine skybox for the End if the user didn't select the
 // OF skybox. This saves about 4 MB.
-if (Config.end_sky !== 'optifine') {
+if (end_sky !== 'optifine') {
   Customizer.delete('assets/minecraft/optifine/sky/world1')
 }
 

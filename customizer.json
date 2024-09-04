@@ -77,6 +77,42 @@
       "swinging_lanterns",
       "campfire_color",
       "soul_campfire_color"
+    ],
+    "1.20.5": [
+      "post",
+      "optifine",
+      "shaderpack",
+      "sodium",
+      "modded",
+      "of_custom_sky_overworld",
+      "fabulous_firmament",
+      "post_sun",
+      "aurora_color",
+      "night_sky_v2",
+      "auroras",
+      "end_sky_no_iviewrotmat",
+      "darkness_effect",
+      "wither_effect",
+      "speed_effect",
+      "grass_effect",
+      "fresnel",
+      "better_lava",
+      "menu_background",
+      "menu_background_sketch_paper_color",
+      "menu_background_sketch_ink_color",
+      "menu_background_sketch_paper_texture",
+      "menu_background_sketch_stains",
+      "menu_background_sketch_grid",
+      { "option": "glass_panes",
+        "packs": [ "light", "dark", "high" ]
+      },
+      "flip_shovels",
+      "leaves_model",
+      "inset_doors",
+      "waving_plants",
+      "swinging_lanterns",
+      "campfire_color",
+      "soul_campfire_color"
     ]
   },
   "categories": {
@@ -292,6 +328,29 @@
           "value": "cloudy",
           "thumbnail": "end_sky/cloudy",
           "preview": "end_sky/cloudy_big.webm"
+        }
+      ]
+    },
+    "end_sky_no_iviewrotmat": {
+      "name": "End Sky",
+      "desc": "In vanilla Minecraft, the End sky uses a skybox with a tiling texture. Resource packs can change the texture used for this or, using Optifine, override how the skybox is drawn entirely.",
+      "category": "end_sky",
+      "type": "select",
+      "condition": "optifine",
+      "options": [
+        {
+          "name": "Vanilla",
+          "desc": "Use the tiling vanilla End skybox with a custom texture.",
+          "value": "vanilla",
+          "thumbnail": "end_sky/vanilla",
+          "preview": "end_sky/vanilla_big"
+        },
+        {
+          "name": "Optifine",
+          "desc": "Use Optifine's Custom Sky feature to replace the skybox.",
+          "value": "optifine",
+          "thumbnail": "end_sky/optifine",
+          "preview": "end_sky/optifine_big"
         }
       ]
     },
@@ -637,7 +696,7 @@
       "default": "varied_height",
       "options": [
         {
-          "name": "Varied height",
+          "name": "Varied Height",
           "desc": "Leaves have random height differences.",
           "value": "varied_height",
           "thumbnail": "leaves_model/varied_height.gif"
@@ -649,7 +708,7 @@
           "thumbnail": "leaves_model/vanilla"
         },
         {
-          "name": "Bushy leaves",
+          "name": "Bushy Leaves",
           "desc": "Leaves blocks have some leaves that stick out to give them a bushy look.",
           "value": "bushy",
           "thumbnail": "leaves_model/bushy"
@@ -781,7 +840,7 @@
           "tnPixels": true
         },
         {
-          "name": "Low-poly grass",
+          "name": "Low-poly Grass",
           "desc": "Grass blocks have low-poly 3D grass blades that stick out on top.",
           "value": "low_poly",
           "thumbnail": "grass/low_poly_grass",
@@ -789,7 +848,7 @@
           "warn": 1
         },
         {
-          "name": "Dense grass",
+          "name": "Dense Grass",
           "desc": "Grass blocks have dense, more realistic-looking grass on top of them. This effect has various problems when viewed from certain distances/angles, but works fine in most regular gameplay.",
           "value": "dense",
           "thumbnail": "grass/dense_grass",
@@ -800,25 +859,89 @@
     },
     "menu_background": {
       "name": "Menu Background",
-      "desc": "Choose an effect for the background in various menus, including the pause menu, settings menu, and any others that use the background blur effect in default.",
+      "desc": "Choose an effect for the background in various menus, including the pause menu, settings menu, and any others that use the background blur effect in default.\n\nThese effects require the Menu Background Blur accessibility setting in-game to be set to any value above 10%.",
       "type": "select",
       "options": [
         {
-          "name": "Out of focus",
+          "name": "Out of Focus",
           "desc": "Darkens, desaturates, and blurs the background, making it clear that it is not in focus.",
           "value": "out_of_focus",
           "thumbnail": "menu_bg/out_of_focus_small",
-          "preview": "menu_bg/out_of_focus",
-          "tnPixels": true
+          "preview": "menu_bg/out_of_focus"
         },
         {
-          "name": "Parchment sketch",
+          "name": "Parchment Sketch",
           "desc": "Transforms the background into a weathered parchment sketch.",
           "value": "sketch",
           "thumbnail": "menu_bg/sketch_small",
           "preview": "menu_bg/sketch"
         }
-      ]
+      ],
+      "condition": "!sodium"
+    },
+    "menu_background_sketch_paper_color": {
+      "name": "Parchment Sketch - Paper Color",
+      "desc": "Choose a primary color for the Parchment Sketch background.",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.909, 0.878, 0.819],
+        "dark": [0.76983, 0.74433, 0.68683],
+        "high": [0.889, 0.8797, 0.862],
+        "dwarven": [0.909, 0.878, 0.819]
+      },
+      "condition": "menu_background:sketch"
+    },
+    "menu_background_sketch_ink_color": {
+      "name": "Parchment Sketch - Ink Color",
+      "desc": "Choose a secondary color for the Parchment Sketch background.",
+      "type": "vec3_color",
+      "default": {
+        "light": [0.231, 0.145, 0],
+        "dark": [0.265, 0.153, 0.094],
+        "high": [0.231, 0.145, 0],
+        "dwarven": [0.231, 0.145, 0]
+      },
+      "condition": "menu_background:sketch"
+    },
+    "menu_background_sketch_paper_texture": {
+      "name": "Parchment Sketch - Paper Texture",
+      "desc": "Disable this option to remove the paper texture of the background. Disabling it will make the background look \"smoother\".",
+      "default": true,
+      "type": "bool",
+      "condition": "menu_background:sketch"
+    },
+    "menu_background_sketch_stains": {
+      "name": "Parchment Sketch - Stains",
+      "desc": "Disable this option to remove the stains on the background.",
+      "default": true,
+      "type": "bool",
+      "condition": "menu_background:sketch"
+    },
+    "menu_background_sketch_grid": {
+      "name": "Parchment Sketch - Grid",
+      "desc": "Choose a way to display the grid in the Parchment Sketch background.",
+      "type": "select",
+      "options": [
+        {
+          "name": "None",
+          "desc": "Disable the grid entirely.",
+          "value": "none",
+          "thumbnail": "menu_bg/sketch_grid_none"
+        },
+        {
+          "name": "Dots",
+          "desc": "Draw the grid using dots at regular intervals.",
+          "value": "dots",
+          "thumbnail": "menu_bg/sketch_grid_dots"
+        },
+        {
+          "name": "Lines",
+          "desc": "Draw the grid using lines at regular intervals.",
+          "value": "lines",
+          "thumbnail": "menu_bg/sketch_grid_lines"
+        }
+      ],
+      "condition": "menu_background:sketch"
     }
   }
 }
