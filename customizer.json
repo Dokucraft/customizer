@@ -948,7 +948,9 @@
       "name": "Water Tint Correction",
       "desc": "Adjusts the biome color tint on water to better match the original look of Dokucraft instead of being an unnaturally deep blue.",
       "preview": "water_tint_correction",
-      "type": "bool"
+      "type": "bool",
+      "default": true,
+      "condition": "!sodium & !shaderpack"
     }
   }
 }
