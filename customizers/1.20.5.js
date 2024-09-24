@@ -51,6 +51,7 @@ if (Config.speed_effect) await import('mob_effects/speed')
 // Miscellaneous
 if ('grass_effect' in Config && Config.grass_effect !== 'none') await import('grass_effect/grass_effect')
 if (Config.fresnel === false) await import('misc/disable_fresnel')
+if (Config.water_tint_correction === false) await import('misc/disable_water_tint_correction')
 if (Config.better_lava) await import('better_lava/enable')
 if ('menu_background' in Config && Config.menu_background === 'sketch') await import('menu_background/sketch')
 if (Config.glass_panes === 'clear') await import('misc/clear_glass_panes')
