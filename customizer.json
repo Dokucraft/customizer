@@ -96,6 +96,7 @@
       "speed_effect",
       "grass_effect",
       "fresnel",
+      { "option": "water_tint_correction", "minVersion": 7 },
       "better_lava",
       "menu_background",
       "menu_background_sketch_paper_color",
@@ -942,6 +943,12 @@
         }
       ],
       "condition": "menu_background:sketch"
+    },
+    "water_tint_correction": {
+      "name": "Water Tint Correction",
+      "desc": "Adjusts the biome color tint on water to better match the original look of Dokucraft instead of being an unnaturally deep blue.",
+      "preview": "water_tint_correction",
+      "type": "bool"
     }
   }
 }
