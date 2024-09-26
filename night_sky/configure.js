@@ -24,6 +24,12 @@ switch (Config.night_sky) {
           }
         }),
 
+      // Fix for the OF end sky breaking
+      Customizer.readFile('assets/minecraft/shaders/core/position_tex.vsh').then(vsh => Customizer.writeFile(
+        'assets/minecraft/shaders/core/position_tex.vsh',
+        vsh.replace('} else { // Moon', '} else if (tsize.x == tsize.y * 2) { // Moon')
+      )),
+
       // Add information about the extra moon texture for the shader
       Customizer.readJSON('assets/minecraft/shaders/program/skybox.json').then(shader => {
         shader.samplers.push({ name: 'MoonSampler' })
