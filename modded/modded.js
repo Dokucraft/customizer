@@ -13,5 +13,14 @@ await Promise.all([
 		'assets/minecraft/models/block/emerald_block.json',
 		'assets/minecraft/models/block/emerald_ore.json',
 		'assets/minecraft/models/block/packed_ice.json',
+		'assets/minecraft/textures/block/blue_ice_particle.png',
+		'assets/minecraft/textures/block/diamond_block_particle.png',
+		'assets/minecraft/textures/block/diamond_ore_particle.png',
+		'assets/minecraft/textures/block/emerald_block_particle.png',
+		'assets/minecraft/textures/block/emerald_ore_particle.png',
+		'assets/minecraft/textures/block/ochre_froglight_particle.png',
+		'assets/minecraft/textures/block/packed_ice_particle.png',
+		'assets/minecraft/textures/block/pearlescent_froglight_particle.png',
+		'assets/minecraft/textures/block/verdant_froglight_particle.png',
   )
 ])
