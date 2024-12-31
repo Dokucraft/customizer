@@ -22,7 +22,7 @@ switch (Config.night_sky) {
       }),
       Customizer.readJSON('assets/minecraft/post_effect/transparency.json').then(layer => {
         layer.passes.find(e => e.program === 'minecraft:dokucraft/sky_post').inputs.push({
-          sampler_name: 'MoonSampler',
+          sampler_name: 'Moon',
           location: 'moon',
           width: 1,
           height: 1,

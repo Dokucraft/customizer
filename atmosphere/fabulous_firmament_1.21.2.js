@@ -32,19 +32,19 @@ await Promise.all([
     const pass = layer.passes.find(e => e.program === 'minecraft:dokucraft/sky_post')
 
     // Remove the regular skybox textures
-    pass.inputs = pass.inputs.filter(e => !['SkyBoxDaySampler','SkyBoxNightSampler'].includes(e.sampler_name))
+    pass.inputs = pass.inputs.filter(e => !['SkyBoxDay','SkyBoxNight'].includes(e.sampler_name))
 
     // Add the new textures
     pass.inputs.push(
       {
-        sampler_name: 'CloudsSampler',
+        sampler_name: 'Clouds',
         location: 'minecraft:clouds_opacity',
         width: 1,
         height: 1,
         bilinear: true
       },
       {
-        sampler_name: 'SkyColorSampler',
+        sampler_name: 'SkyColor',
         location: 'minecraft:sky_colors',
         width: 1,
         height: 1,
