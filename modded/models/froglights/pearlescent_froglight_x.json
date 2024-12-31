@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/froglights/cube_column_froglights","textures":{"side":"minecraft:block/pearlescent_froglight_side2","end":"minecraft:block/pearlescent_froglight_top"}}
+{"parent":"minecraft:block/froglights/cube_column_froglights_x","textures":{"side":"minecraft:block/pearlescent_froglight_side2","end":"minecraft:block/pearlescent_froglight_top"}}
