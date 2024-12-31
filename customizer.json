@@ -1019,7 +1019,8 @@
           "desc": "The original tiling Dokucraft water texture.",
           "value": "original",
           "thumbnail": "water_surface/original",
-          "preview": "water_surface/original.webm"
+          "preview": "water_surface/original.webm",
+          "tnPixels": true
         },
         {
           "name": "Procedural",
