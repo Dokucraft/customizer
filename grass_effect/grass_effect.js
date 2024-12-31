@@ -4,7 +4,7 @@ const grassTypes = {
 }
 
 if (!(Config.grass_effect in grassTypes)) {
-  throw 'Invalid grass type'
+  throw (`Invalid grass type: ${Config.grass_effect} (${Customizer.id})`)
 }
 
 await Promise.all([
