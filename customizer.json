@@ -114,6 +114,46 @@
       "swinging_lanterns",
       "campfire_color",
       "soul_campfire_color"
+    ],
+    "1.21.2": [
+      "post",
+      "optifine",
+      "shaderpack",
+      "sodium",
+      "modded",
+      "of_custom_sky_overworld",
+      "fabulous_firmament",
+      "post_sun",
+      "aurora_color",
+      "night_sky_v2",
+      "auroras",
+      "end_sky_no_iviewrotmat",
+      "darkness_effect",
+      "wither_effect",
+      "speed_effect",
+      "grass_effect",
+      "random_dense_grass",
+      "water_surface",
+      "fresnel",
+      "water_tint_correction",
+      "underwater_fog_correction",
+      "better_lava",
+      "menu_background",
+      "menu_background_sketch_paper_color",
+      "menu_background_sketch_ink_color",
+      "menu_background_sketch_paper_texture",
+      "menu_background_sketch_stains",
+      "menu_background_sketch_grid",
+      { "option": "glass_panes",
+        "packs": [ "light", "dark", "high" ]
+      },
+      "flip_shovels",
+      "leaves_model",
+      "inset_doors",
+      "waving_plants",
+      "swinging_lanterns",
+      "campfire_color",
+      "soul_campfire_color"
     ]
   },
   "categories": {
@@ -125,6 +165,10 @@
     "overworld_sky": {
       "name": "Overworld Sky",
       "desc": "Some mods, like Optifine, let resource packs customize how the sky is drawn. Post-processing shaders allow Dokucraft to draw a custom sky without requiring any mods."
+    },
+    "water": {
+      "name": "Water",
+      "desc": "Core shaders can greatly enhance the look of water."
     },
     "screen_effects": {
       "name": "Screen Effects",
@@ -757,7 +801,8 @@
       "type": "bool",
       "default": true,
       "condition": "!sodium & !shaderpack",
-      "preview": "fresnel.webm"
+      "preview": "fresnel.webm",
+      "category": "water"
     },
     "glass_panes": {
       "name": "Glass Panes",
@@ -949,8 +994,49 @@
       "desc": "Adjusts the biome color tint on water to better match the original look of Dokucraft instead of being an unnaturally deep blue.",
       "preview": "water_tint_correction",
       "type": "bool",
+      "category": "water",
       "default": true,
       "condition": "!sodium & !shaderpack"
+    },
+    "underwater_fog_correction": {
+      "name": "Underwater Fog Correction",
+      "desc": "Adjusts the underwater fog color to make it look more natural.",
+      "preview": "underwater_fog_correction",
+      "type": "bool",
+      "category": "water",
+      "default": true,
+      "condition": "!sodium & !shaderpack"
+    },
+    "water_surface": {
+      "name": "Water Surface",
+      "desc": "Choose a look for the water surface.",
+      "category": "water",
+      "type": "select",
+      "condition": "!sodium & !shaderpack",
+      "options": [
+        {
+          "name": "Original",
+          "desc": "The original tiling Dokucraft water texture.",
+          "value": "original",
+          "thumbnail": "water_surface/original",
+          "preview": "water_surface/original.webm"
+        },
+        {
+          "name": "Procedural",
+          "desc": "Generate a texture using core shaders that tiles every 16 blocks instead of every single block.",
+          "value": "procedural",
+          "thumbnail": "water_surface/procedural",
+          "preview": "water_surface/procedural.webm"
+        }
+      ]
+    },
+    "random_dense_grass": {
+      "name": "Dense Grass - Random Placement",
+      "desc": "Randomizes the position of dense grass blades instead of fixing them to the pixel grid. This should look better and fix most problems that happen when viewing the grass from certain distances.",
+      "type": "bool",
+      "default": true,
+      "condition": "!sodium & !shaderpack & grass_effect:dense",
+      "warn": 1
     }
   }
 }
