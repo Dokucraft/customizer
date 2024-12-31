@@ -55,9 +55,9 @@ if (Config.water_tint_correction === false) await import('misc/disable_water_tin
 if (Config.underwater_fog_correction === false) await import('misc/disable_underwater_fog_correction')
 
 // Miscellaneous
-if (Config.grass_effect !== 'none') await import('grass_effect/grass_effect_1.21.2')
+if ('grass_effect' in Config && Config.grass_effect !== 'none') await import('grass_effect/grass_effect_1.21.2')
 if (Config.better_lava) await import('better_lava/enable_1.21.2')
-if (Config.menu_background === 'sketch') await import('menu_background/sketch_1.21.2')
+if ('menu_background' in Config && Config.menu_background === 'sketch') await import('menu_background/sketch_1.21.2')
 if (Config.glass_panes === 'clear') await import('misc/clear_glass_panes')
 if (Config.flip_shovels === 'right') await import('misc/flip_shovels')
 if (Config.waving_plants === false) await import('misc/disable_waving_plants_1.21.2')
