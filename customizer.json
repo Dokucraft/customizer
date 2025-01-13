@@ -148,7 +148,8 @@
         "packs": [ "light", "dark", "high" ]
       },
       "flip_shovels",
-      "leaves_model",
+      { "option": "leaves_model", "maxVersion": 8 },
+      { "option": "leaves_model_v2", "minVersion": 9 },
       "inset_doors",
       "waving_plants",
       "swinging_lanterns",
@@ -746,6 +747,26 @@
           "value": "varied_height",
           "thumbnail": "leaves_model/varied_height.gif"
         },
+        {
+          "name": "Vanilla",
+          "desc": "Use the standard simple block model.",
+          "value": "vanilla",
+          "thumbnail": "leaves_model/vanilla"
+        },
+        {
+          "name": "Bushy Leaves",
+          "desc": "Leaves blocks have some leaves that stick out to give them a bushy look.",
+          "value": "bushy",
+          "thumbnail": "leaves_model/bushy"
+        }
+      ]
+    },
+    "leaves_model_v2": {
+      "name": "Leaves Model",
+      "desc": "Choose a model for the leaves blocks.",
+      "type": "select",
+      "default": "vanilla",
+      "options": [
         {
           "name": "Vanilla",
           "desc": "Use the standard simple block model.",
