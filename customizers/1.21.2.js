@@ -1,3 +1,5 @@
+const configFile = 'assets/dokucraft/shaders/include/config.glsl'
+
 if (!Config.optifine) {
   /*
     If Optifine isn't used, there's no point in keeping the optifine folder.
@@ -11,12 +13,26 @@ if (!Config.optifine) {
 }
 
 if (Config.sodium) {
+  // Remove terrain and "include" shaders when Sodium is used to get rid of the error notification
+  Customizer.delete(
+    'assets/minecraft/shaders/core/rendertype_cutout.json',
+    'assets/minecraft/shaders/core/rendertype_cutout_mipped.json',
+    'assets/minecraft/shaders/core/rendertype_solid.json',
+    'assets/minecraft/shaders/core/rendertype_translucent.json',
+    'assets/minecraft/shaders/include/fog.glsl',
+    'assets/minecraft/shaders/include/light.glsl',
+  )
+}
+
+if (Config.sodium || !Config.post) {
   // If Sodium is used, get rid of the Fabulous skybox, it's not compatible
   Customizer.delete(
     'assets/minecraft/post_effect/transparency.json',
     'assets/minecraft/shaders/dokucraft/sky_post.json',
     'assets/minecraft/shaders/dokucraft/sky_post.vsh',
     'assets/minecraft/shaders/dokucraft/sky_post.fsh',
+    'assets/minecraft/textures/effect/skybox_day.png',
+    'assets/minecraft/textures/effect/skybox_night.png',
   )
 }
 
@@ -26,6 +42,11 @@ if (Config.shaderpack) {
     Customizer.add(`shaderpack/block`, 'assets/minecraft/textures/block'),
     Customizer.add(`shaderpack/optifine`, 'assets/minecraft/optifine/ctm')
   ])
+}
+
+if (Customizer.version >= 9 && Config.post && !Config.sodium && !Config.of_custom_sky_overworld) {
+  // Disable the default stars if the Fabulous sky is used
+  await Customizer.shaders.enable(configFile, 'DISABLE_CORE_STARS')
 }
 
 // If Mods are used, replace the Blocks Atlas and Add Affected Textures
@@ -42,7 +63,7 @@ if (Config.end_sky_no_iviewrotmat) await import('end_sky/configure_1.21.2')
 
 // Screen Effects
 if (Config.darkness_effect || Config.wither_effect || Config.speed_effect) {
-  await Customizer.shaders.enable('assets/dokucraft/shaders/include/config.glsl', 'ENABLE_MOB_EFFECTS')
+  await Customizer.shaders.enable(configFile, 'ENABLE_MOB_EFFECTS')
 }
 if (Config.darkness_effect) await import('mob_effects/darkness_1.21.2')
 if (Config.wither_effect) await import('mob_effects/wither_1.21.2')
