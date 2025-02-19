@@ -1,4 +1,4 @@
-switch (Config.leaves_model) {
+switch (Config.leaves_model ?? Config.leaves_model_v2) {
   case 'vanilla': {
     if (Customizer.version <= 8) { // Version 9+ (1.21.4) uses vanilla leaves as default
       if (Customizer.version <= 2) { // Dark and High had a different structure in older versions
