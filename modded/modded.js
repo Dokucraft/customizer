@@ -7,6 +7,7 @@ await Promise.all([
 	Customizer.add(`modded/models/froglights`, 'assets/minecraft/models/block/froglights'),
 	
 	Customizer.delete(
+		'assets/minecraft/textures/effect',
 		'assets/minecraft/models/block/blue_ice.json',
 		'assets/minecraft/models/block/diamond_block.json',
 		'assets/minecraft/models/block/diamond_ore.json',
