@@ -17,6 +17,8 @@ if (Config.sodium) {
     'assets/minecraft/shaders/core/rendertype_cutout_mipped.json',
     'assets/minecraft/shaders/core/rendertype_solid.json',
     'assets/minecraft/shaders/core/rendertype_translucent.json',
+    'assets/minecraft/shaders/core/rendertype_clouds.fsh',
+    'assets/minecraft/shaders/core/rendertype_clouds.vsh',
     'assets/minecraft/shaders/include/fog.glsl',
     'assets/minecraft/shaders/include/light.glsl',
   )
