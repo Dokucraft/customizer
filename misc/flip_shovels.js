@@ -24,12 +24,21 @@ const shovelTextures = [
 ]
 
 if (Config.optifine) {
-  shovelTextures.push(
-    'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_iron_shovel.png',
-    'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_golden_shovel.png',
-    'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_diamond_shovel.png',
-    'assets/minecraft/optifine/cit/renamable_alts/tools/bone_shovel.png',
-  )
+  if (Customizer.version >= 9) {
+    shovelTextures.push(
+      'assets/minecraft/textures/item/cit/renamable_alts/tools/xmas_iron_shovel.png',
+      'assets/minecraft/textures/item/cit/renamable_alts/tools/xmas_golden_shovel.png',
+      'assets/minecraft/textures/item/cit/renamable_alts/tools/xmas_diamond_shovel.png',
+      'assets/minecraft/textures/item/cit/renamable_alts/tools/bone_shovel.png',
+    )
+  } else {
+    shovelTextures.push(
+      'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_iron_shovel.png',
+      'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_golden_shovel.png',
+      'assets/minecraft/optifine/cit/renamable_alts/tools/xmas_diamond_shovel.png',
+      'assets/minecraft/optifine/cit/renamable_alts/tools/bone_shovel.png',
+    )
+  }
 }
 
 for (const file of shovelTextures) {
