@@ -177,6 +177,23 @@
       "inset_doors",
       "campfire_color",
       "soul_campfire_color"
+    ],
+    "1.21.6": [
+      "post",
+      "optifine",
+      "shaderpack",
+      "sodium",
+      "modded",
+      "of_custom_sky_overworld",
+      "end_sky_no_iviewrotmat",
+      { "option": "glass_panes",
+        "packs": [ "light", "dark", "high" ]
+      },
+      "flip_shovels",
+      "leaves_model_v2",
+      "inset_doors",
+      "campfire_color",
+      "soul_campfire_color"
     ]
   },
   "categories": {
