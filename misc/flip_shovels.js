@@ -23,7 +23,7 @@ const shovelTextures = [
   'assets/minecraft/textures/item/diamond_shovel.png',
 ]
 
-if (Customizer.version >= 9) {
+if (Customizer.version >= 10) {
   shovelTextures.push(
     'assets/minecraft/textures/item/cit/renamable_alts/tools/xmas_iron_shovel.png',
     'assets/minecraft/textures/item/cit/renamable_alts/tools/xmas_golden_shovel.png',
